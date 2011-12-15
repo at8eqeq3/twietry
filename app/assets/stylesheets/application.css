@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+* {
+  font-family: 'EB Garamond', serif;
+
+}
+
+body {
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+.topbar {
+  box-shadow: 0 8px 8px rgba(17,0,68,0.3);
+}
+
+.topbar-inner {
+  background-color: #110044 !important;
+  background-image: none !important;
+}
+
+.top-branding {
+  padding-top: 40px;
+  height: 80px;
+  box-shadow: 0 5px 5px rgba(33,0,11,0.15);
+}
+
+.twi {
+  padding-top: 8px;
+}
+
+/*footer .row {
+  background-color: #f7f0ff;
+  border-top: 1px solid black;
+}*/
+
+.line {
+  height: 70px;
+  border-bottom: 1px dotted #f0f0f0;
+}
+.line img {
+  /*width: 64px;
+  height: 64px;*/
+  /*padding: 2px;*/
+  /*border: 1px solid #eee;*/
+  /*float: left;*/
+  background-color: #ccc;
+}
+.line .text {
+  /*padding-left: 72px;*/
+  font-size: 24px;
+  padding-top: 20px;
+}
+

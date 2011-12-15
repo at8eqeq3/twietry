@@ -1,0 +1,20 @@
+ru:
+  layout:
+    whatis: Это такой веб-сайт, где можно сочинять стихи всем миром по одной строчке
+  home:
+    index:
+      title: Главная
+    about:
+      title: О проекте
+    support:
+      title: Помогающая помощь
+  verses:
+    fields:
+      title: Название
+      title_hint: Если не знаете, как назвать, напишите ***
+      idea: Идея
+      idea_hint: Опишите вкратце, о чем будет стих
+    index:
+      title: Стихи        
+    new:
+      title: Начать стих
