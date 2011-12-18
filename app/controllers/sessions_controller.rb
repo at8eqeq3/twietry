@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.uid
     #current_user = @user
     flash[:success] = t(:'auth.success', :name => @user.name)
-    redirect_to root_url
+    redirect_to(:back)
     rescue Exception => e
       render :text => e.message
     end

@@ -1,6 +1,12 @@
 .page-header
+- if current_user
   %h1= t(:'verses.new.title')
+- else
+  %center
+    %a{:href => "/auth/twitter"}
+      %img{:src => "/assets/signin.png"}
 .row
+- if current_user
   = form_for @verse do |f|
     %fieldset
       .clearfix
