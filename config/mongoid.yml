@@ -1,6 +1,9 @@
 development:
-  host: localhost
-  database: twietry_development
+  host:  staff.mongohq.com
+  port: 10004
+  database: twietry
+  username: wavemeup
+  password: Shippuuden4
 
 test:
   host: localhost
