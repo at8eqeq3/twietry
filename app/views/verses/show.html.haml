@@ -1,35 +1,29 @@
 .page-header
   %h1
-    Verse Title
-    %small change it to a variable
+    = @verse.title
+    %br
+    %small= @verse.idea
 .row
   .span10.offset1
+    - if @verse.lines.count > 0
+      - @verse.lines.each do |line|
+        .line.row
+          .span2
+            %img{:src => line.user.userpic, :width => 64, :height => 64}
+          .text.span8
+            = line.text
+    - else
+      .line.row
+        .alert-message.block-message.warning= t(:'verses.show.no_lines')
     .line.row
-      .span2
-        %img{:src => "/assets/nouserpic.png", :width => 64, :height => 64}
-      .text.span8
-        I will wake you up at night
-    .line.row
-      .span2
-        %img{:src => "/assets/nouserpic.png", :width => 64, :height => 64}
-      .text.span8
-        Prepare for collective suicide
-    .line.row
-      .span2
-        %img{:src => "/assets/nouserpic.png", :width => 64, :height => 64}
-      .text.span8
-        I can take you to the moon
-    .line.row
-      .span2
-        %img{:src => "/assets/nouserpic.png", :width => 64, :height => 64}
-      .text.span8
-        Salvation will come soon
-    .line.row
-      .span2
-        %img{:src => "/assets/nouserpic.png", :width => 64, :height => 64}
-      %form.form-stacked
-        %fieldset
-          .clearfix
-            .input
-              %input.xlarge.span6{:type => "text", :name => "verse[title]"}
-              %input.btn.primary.span2{:type => "submit", :value => "Add!"}
+      - if current_user
+        .span2
+          %img{:src => current_user.userpic, :width => 64, :height => 64}
+        %form.form-stacked
+          %fieldset
+            .clearfix
+              .input
+                %input.xlarge.span6{:type => "text", :name => "verse[title]"}
+                %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
+      - else
+        %img{:src => "/assets/sign-in-with-twitter-d.png"}

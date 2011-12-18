@@ -1,0 +1,11 @@
+- if verses.count == 0
+  %p= t(:'verses.no_verses')
+- else
+  - verses.each do |verse|
+    .verse_item
+      %img{:src => "http://id.dxfoto.ru/do?s=5&q=5&l=#{verse.id}", :style => "float: left;"}
+      .verse_item_data{:style => "padding-left: 28px;"}
+        %a{:href => verse_path(verse)}= verse.title
+        %br
+        = verse.user.name
+        = "(#{verse.lines.count})"

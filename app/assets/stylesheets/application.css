@@ -16,6 +16,10 @@ body {
   line-height: 24px !important;
 }
 
+h1 small {
+  line-height: 12px !important;
+}
+
 .topbar {
   box-shadow: 0 8px 8px rgba(17,0,68,0.3);
 }
@@ -66,10 +70,8 @@ body {
   font-size: 24px;
   padding-top: 20px;
 }
-<<<<<<< HEAD
-=======
+
 .top-padded {
   margin-top: 6px;
 }
->>>>>>> twitter-oauth
 
