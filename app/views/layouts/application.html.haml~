@@ -6,9 +6,10 @@
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=EB+Garamond&subset=latin,cyrillic"
     = stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"
     = javascript_include_tag "application"
+    %script{:src => "http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js", :type => "text/javascript"}
     = csrf_meta_tags
   %body
-    .topbar
+    .topbar{:'data-dropdown' => "dropdown"}
       .topbar-inner
         .container
           %a.brand{:title => "TWIETRY=TWItter+poETRY"} Twietry
@@ -18,9 +19,12 @@
             %li= link_to t(:'home.support.title'), support_path
             %li= link_to t(:'verses.new.title'), new_verse_path
           - if current_user
-            %a.twi.pull-right{:href => current_user.twitter}
-              %img{:src => current_user.userpic, :style => "width: 24px; height: 24px"}
-              = current_user.name
+            %ul.nav.secondary-nav
+              %li.dropdown
+                %a.dropdown-toggle{:href => "#"}= current_user.name
+                %ul.dropdown-menu
+                  %li= link_to t(:'user.show.title'), user_path(current_user)
+                  %li= link_to t(:'auth.logout'), root_path
           - else
             %a.twi.pull-right{:href => "/auth/twitter"}
               %img{:src => "/assets/sign-in-with-twitter-d.png"}
@@ -48,9 +52,7 @@
               %strong> ETRY
             %p= t(:'layout.whatis')
           .span2.offset2
-            = session[:uid]
-            = current_user.name
-            image!
+            %img{:src => "/assets/logo100.png"}
           .span4.offset2
             %ul.unstyled
               %li= link_to t(:'home.about.title'), about_path

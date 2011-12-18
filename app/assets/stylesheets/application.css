@@ -25,6 +25,15 @@ body {
   background-image: none !important;
 }
 
+.dropdown-menu {
+  background-color: #1d0d4e !important;
+  background-image: none !important;
+}
+.dropdown-menu li a:hover {
+  background-color: #110044 !important;
+  background-image: none !important;
+}
+
 .top-branding {
   padding-top: 40px;
   height: 80px;

@@ -4,6 +4,8 @@ ru:
   auth:
     success: "Добро пожаловать, %{name}"
     fail: "Ошибка авторизации. Твиттер сказал: %{message}"
+    logout: Выйти
+    logged_out: Пока-пока! Приходите еще!
   home:
     index:
       title: Главная

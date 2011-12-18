@@ -2,7 +2,9 @@ Twietry::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'sessions#create'
   match '/auth/failure' => 'sessions#fail'
+  match '/auth/logout' => 'sessions#destroy'
 
+  resources :user #TODO make it better! 
   resources :verses
 
   match "/about" => "home#about"
