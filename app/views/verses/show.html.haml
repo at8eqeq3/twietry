@@ -26,4 +26,6 @@
                 %input.xlarge.span6{:type => "text", :name => "verse[title]"}
                 %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
       - else
-        %img{:src => "/assets/sign-in-with-twitter-d.png"}
+        %a{:href => "/auth/twitter"}
+          %img{:src => "/assets/sign-in-with-twitter-d.png"}
+
