@@ -1,21 +1,21 @@
 class SessionsController < ApplicationController
   def create
     begin
-    uid = auth_hash['uid']
-    name = auth_hash['user_info']['name']
-    userpic = auth_hash['user_info']['image']
-    twitter = auth_hash['user_info']['urls']['Twitter']
-    @user = User.find_or_initialize_by(:uid => uid)
-    @user.name = name
-    @user.userpic = userpic
-    @user.twitter = twitter
-    @user.last_login_at = Time.now
-    @user.last_activity_at = Time.now
-    @user.save!
-    session[:user_id] = @user.uid
+      uid = auth_hash['uid']
+      name = auth_hash['user_info']['name']
+      userpic = auth_hash['user_info']['image']
+      twitter = auth_hash['user_info']['urls']['Twitter']
+      @user = User.find_or_initialize_by(:uid => uid)
+      @user.name = name
+      @user.userpic = userpic
+      @user.twitter = twitter
+      @user.last_login_at = Time.now
+      @user.last_activity_at = Time.now
+      @user.save!
+      session[:user_id] = @user.uid
     #current_user = @user
-    flash[:success] = t(:'auth.success', :name => @user.name)
-    redirect_to(:back)
+      flash[:success] = t(:'auth.success', :name => @user.name)
+      redirect_to(:back)
     rescue Exception => e
       render :text => e.message
     end
