@@ -31,7 +31,6 @@ body {
 }
 .dropdown-menu li a:hover {
   background-color: #110044 !important;
-  background-image: none !important;
 }
 
 .top-branding {
@@ -66,10 +65,7 @@ body {
   font-size: 24px;
   padding-top: 20px;
 }
-<<<<<<< HEAD
-=======
 .top-padded {
   margin-top: 6px;
 }
->>>>>>> twitter-oauth
 
