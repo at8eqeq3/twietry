@@ -3,7 +3,7 @@ class Verse
   include Mongo::Voteable
   field :title, :type => String
   field :idea, :type => String
-  #validates_presence_of :title, :idea
+  validates_presence_of :title, :idea
   field :is_finished, :type => Boolean, :default => false
   
   attr_protected :is_finished
