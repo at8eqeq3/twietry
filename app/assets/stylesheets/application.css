@@ -43,6 +43,9 @@ body {
 .twi {
   padding-top: 8px;
 }
+.signin {
+	text-align: center
+	}
 
 /*footer .row {
   background-color: #f7f0ff;
