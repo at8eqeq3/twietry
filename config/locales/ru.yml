@@ -20,12 +20,18 @@ ru:
       idea: Идея
       idea_hint: Опишите вкратце, о чем будет стих
       create: Создать
+    started: создал - 
     index:
       title: Стихи
     show:
       no_lines: В этом стихе пока нет ни одной строчки. Все в твоих руках!
     new:
       title: Начать стих
+    create:
+      failure: Пожалуйста, заполните все поля
+      success: Стих успешно создан
   lines:
     fields:
       create: Добавить
+    title: строк
+	
