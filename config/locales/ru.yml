@@ -21,6 +21,11 @@ ru:
       idea_hint: Опишите вкратце, о чем будет стих
       create: Создать
     index:
-      title: Стихи        
+      title: Стихи
+    show:
+      no_lines: В этом стихе пока нет ни одной строчки. Все в твоих руках!
     new:
       title: Начать стих
+  lines:
+    fields:
+      create: Добавить

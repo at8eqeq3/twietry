@@ -3,9 +3,13 @@ class User
   field :uid, :type => String
   field :name, :type => String
   field :userpic, :type => String
+<<<<<<< HEAD
+  attr_protected :uid, :name, :userpic
+=======
   field :twitter, :type => String
-  field :last_login_at, :type => Time
-  field :last_activity_at, :type => Time
+  field :last_login_at, :type => DateTime
+  field :last_activity_at, :type => DateTime
   #attr_protected :uid, :name, :userpic
+>>>>>>> twitter-oauth
   has_many :verses
 end
