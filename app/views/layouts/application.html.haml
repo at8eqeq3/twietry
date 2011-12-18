@@ -18,14 +18,6 @@
             %li= link_to t(:'home.about.title'), about_path
             %li= link_to t(:'home.support.title'), support_path
             %li= link_to t(:'verses.new.title'), new_verse_path
-<<<<<<< HEAD
-            %li= link_to "Settings", "#"
-          %a.twi.pull-right{:href => "http://twitter.com/"}
-            %img{:src => "/assets/sign-in-with-twitter-d.png"}
-    .top-branding
-      %img{:src => "/assets/twietry-top-branding.png"}
-    .container
-=======
           - if current_user
             %ul.nav.secondary-nav
               %li.dropdown
@@ -45,7 +37,6 @@
             .span10.offset3
               %div{:class => "alert-message #{level} top-padded"}
                 %p= message
->>>>>>> twitter-oauth
       .row
         .span12.offset2
           = yield
@@ -61,11 +52,7 @@
               %strong> ETRY
             %p= t(:'layout.whatis')
           .span2.offset2
-<<<<<<< HEAD
-            image!
-=======
             %img{:src => "/assets/logo100.png"}
->>>>>>> twitter-oauth
           .span4.offset2
             %ul.unstyled
               %li= link_to t(:'home.about.title'), about_path
