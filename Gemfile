@@ -46,3 +46,5 @@ gem "launchy",            ">= 0.4.0", :group => :test
 # Я люблю OmniAuth, в нем можно прятать своих юзеров
 gem "omniauth",           ">= 0.2.6"
 gem "twitter"
+
+gem "russian"
