@@ -22,6 +22,7 @@ h1 small {
 
 .topbar {
   box-shadow: 0 8px 8px rgba(17,0,68,0.3);
+  font-size: 19px;
 }
 
 .topbar-inner {
@@ -49,6 +50,9 @@ h1 small {
 }
 .signin {
 	text-align: center;
+	}
+.table {
+	margin-top: 20px;
 	}
 
 /*footer .row {

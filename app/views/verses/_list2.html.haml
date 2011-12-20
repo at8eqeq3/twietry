@@ -1,0 +1,18 @@
+- if verses.count == 0
+  %tbody
+    = "Nothing found :("
+- else
+  - verses.each do |verse|
+    %tbody
+      %tr
+        %td 
+          %a{:href => verse_path(verse)}= verse.title
+        %td #{verse.user.name}
+        %td #{verse.lines.count}
+        %td Last editor
+        - if verse.is_finished==false
+          %td
+            = t(:'verses.status.not_finished')
+        - else
+          %td
+            = t(:'verses.status.finished')       
