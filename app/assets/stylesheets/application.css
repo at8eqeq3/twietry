@@ -118,3 +118,8 @@ a.feed-link {
   padding-left: 18px;
   background: url('/assets/feed-16x16.png') no-repeat;
 }
+img.identicon {
+  float: left;
+  padding: 1px;
+  border: 1px solid #ddd;
+}
