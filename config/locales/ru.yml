@@ -14,6 +14,12 @@ ru:
     support:
       title: Помогающая помощь
   verses:
+    author: Автор
+    last_user: Последний участник
+    status:
+      title: Статус
+      finished: Закончен
+      not_finished: Не закончен
     fields:
       title: Название
       title_hint: Если не знаете, как назвать, напишите ***
@@ -27,11 +33,13 @@ ru:
       no_lines: В этом стихе пока нет ни одной строчки. Все в твоих руках!
     new:
       title: Начать стих
+    all:
+       title: Все стихи
     create:
       failure: Пожалуйста, заполните все поля
       success: Стих успешно создан
   lines:
     fields:
       create: Добавить
-    title: строк
+    title: Строк
 	

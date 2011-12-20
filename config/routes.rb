@@ -10,6 +10,7 @@ Twietry::Application.routes.draw do
   match "/about" => "home#about"
 
   match "/support" => "home#support"
+  match "/verses" => "verses#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
