@@ -11,12 +11,12 @@ class Verse
   
   belongs_to :user
   #belongs_to :language
-  has_many :lines
+  embeds_many :lines do 
+    def find_good
+      where(:votes_point.gt => 0)
+    end
+  end
   
   voteable self, :up => +1, :down => -1
 end
 
-class Line
-  include Mongoid::Document
-  #TODO kill me!
-end
