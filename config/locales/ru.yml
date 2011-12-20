@@ -39,6 +39,11 @@ ru:
       failure: Пожалуйста, заполните все поля
       success: Стих успешно создан
   lines:
+    p:
+      zero: строчек нет
+      one: 1 строчка
+      many: %{count} строчки
+      other: %{count} строчек
     fields:
       create: Добавить
     title: Строк

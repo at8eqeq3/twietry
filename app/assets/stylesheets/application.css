@@ -43,6 +43,12 @@ h1 small {
   padding-top: 40px;
   height: 80px;
   box-shadow: 0 5px 5px rgba(33,0,11,0.15);
+  background: url('/assets/twietry-top-branding.png') repeat-x;
+  background-position: 0 40px;
+}
+
+.top-branding img {
+  margin: 0 auto;
 }
 
 .twi {
@@ -82,3 +88,42 @@ h1 small {
   margin-top: 6px;
 }
 
+.alert-message {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+a.twitter-link {
+  padding-left: 18px;
+  background: url('/assets/twitter-16x16.png') no-repeat;
+}
+
+a.facebook-link {
+  padding-left: 18px;
+  background: url('/assets/facebook-16x16.png') no-repeat;
+}
+
+a.github-link {
+  padding-left: 18px;
+  background: url('/assets/github-16x16.png') no-repeat;
+}
+
+a.website-link {
+  padding-left: 18px;
+  background: url('/assets/website-16x16.png') no-repeat;
+}
+
+a.cc-link {
+  padding-left: 18px;
+  background: url('/assets/creativecommons-16x16.png') no-repeat;
+}
+
+a.feed-link {
+  padding-left: 18px;
+  background: url('/assets/feed-16x16.png') no-repeat;
+}
+img.identicon {
+  float: left;
+  padding: 1px;
+  border: 1px solid #ddd;
+}
