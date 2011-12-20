@@ -11,7 +11,7 @@
           .span2
             %img{:src => line.user.userpic, :width => 64, :height => 64}
           .text.span8
-            = line.text
+            = line.data
     - else
       .line.row
         .alert-message.block-message.warning= t(:'verses.show.no_lines')
@@ -19,12 +19,19 @@
       - if current_user
         .span2
           %img{:src => current_user.userpic, :width => 64, :height => 64}
-        %form.form-stacked
-          %fieldset
-            .clearfix
-              .input
-                %input.xlarge.span6{:type => "text", :name => "verse[title]"}
-                %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
+        - if @verse.lines.count > 0 and @verse.lines.last.user == current_user
+          .alert-message.block-message.error.span7
+            %strong Добавлять строчки к одному стиху два раза подряд запрещено.
+            %br
+            Подожди, пока кто-то еще напишет сюда, или выбери другой стих.
+        - else
+          %form.form-stacked{:method => "post", :action => verse_line_path(@verse)}
+            %input{:type => "hidden", :name => "authenticity_token", :value => form_authenticity_token}
+            %fieldset
+              .clearfix
+                .input
+                  %input.xlarge.span6{:type => "text", :name => "data"}
+                  %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
       - else
         %a{:href => "/auth/twitter"}
           %img{:src => "/assets/sign-in-with-twitter-d.png"}

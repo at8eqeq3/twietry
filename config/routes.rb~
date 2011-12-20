@@ -1,14 +1,19 @@
 Twietry::Application.routes.draw do
 
-<<<<<<< HEAD
-=======
   match '/auth/:provider/callback' => 'sessions#create'
   match '/auth/failure' => 'sessions#fail'
   match '/auth/logout' => 'sessions#destroy'
 
   resources :user #TODO make it better! 
->>>>>>> twitter-oauth
-  resources :verses
+  resources :verses do
+    resources :lines do
+      member do
+        post 'create'
+        post 'upvote'
+        post 'downvote'
+      end
+    end
+  end
 
   match "/about" => "home#about"
 

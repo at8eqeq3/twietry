@@ -5,7 +5,15 @@ Twietry::Application.routes.draw do
   match '/auth/logout' => 'sessions#destroy'
 
   resources :user #TODO make it better! 
-  resources :verses
+  resources :verses do
+    resources :lines, :only => [:create, :upvote, :downvote] do
+      member do
+        post 'create'
+        post 'upvote'
+        post 'downvote'
+      end
+    end
+  end
 
   match "/about" => "home#about"
 
