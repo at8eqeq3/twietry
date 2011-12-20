@@ -16,7 +16,3 @@ class Verse
   voteable self, :up => +1, :down => -1
 end
 
-class Line
-  include Mongoid::Document
-  #TODO kill me!
-end
