@@ -104,3 +104,22 @@ a.github-link {
   background: url('/assets/github-16x16.png') no-repeat;
 }
 
+a.website-link {
+  padding-left: 18px;
+  background: url('/assets/website-16x16.png') no-repeat;
+}
+
+a.cc-link {
+  padding-left: 18px;
+  background: url('/assets/creativecommons-16x16.png') no-repeat;
+}
+
+a.feed-link {
+  padding-left: 18px;
+  background: url('/assets/feed-16x16.png') no-repeat;
+}
+img.identicon {
+  float: left;
+  padding: 1px;
+  border: 1px solid #999;
+}
