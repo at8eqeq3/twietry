@@ -9,7 +9,7 @@
       - @verse.lines.each do |line|
         .line.row
           .span2
-            %img{:src => line.user.userpic, :width => 64, :height => 64}
+            %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
           .text.span8
             = line.data
     - else
@@ -18,21 +18,24 @@
     .line.row
       - if current_user
       
-        - if @verse.lines.count > 0 and @verse.lines.last.user == current_user
+        - if @verse.is_last? current_user
           .alert-message.block-message.error
             %strong Добавлять строчки к одному стиху два раза подряд запрещено.
             %br
             Подожди, пока кто-то еще напишет сюда, или выбери другой стих.
         - else
           .span2
-            %img{:src => current_user.userpic, :width => 64, :height => 64}
+            %img.identicon{:src => current_user.userpic, :width => 64, :height => 64}
           %form.form-stacked{:method => "post", :action => verse_line_path(@verse)}
             %input{:type => "hidden", :name => "authenticity_token", :value => form_authenticity_token}
             %fieldset
               .clearfix
                 .input
-                  %input.xlarge.span6{:type => "text", :name => "data"}
+                  .span6
+                    %input.xlarge{:type => "text", :name => "data"}
+                    %span.help-block= t(:'lines.fields.data_hint')
                   %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
+                  
       - else
         %a{:href => "/auth/twitter"}
           %img{:src => "/assets/sign-in-with-twitter-d.png"}

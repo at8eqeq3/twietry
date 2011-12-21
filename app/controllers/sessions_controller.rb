@@ -11,6 +11,8 @@ class SessionsController < ApplicationController
       @user.twitter = twitter
       @user.last_login_at = Time.now
       @user.last_activity_at = Time.now
+      @user.token = auth_hash['credentials']['token']
+      @user.secret = auth_hash['credentials']['secret']
       @user.save!
       session[:user_id] = @user.uid
     #current_user = @user

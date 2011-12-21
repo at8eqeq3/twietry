@@ -3,7 +3,7 @@ class Line
   include Mongo::Voteable
   
   validates_presence_of :data
-  validates_length_of :data, :minimum => 10
+  validates_length_of :data, :in => 10..100
   
   field :data, :type => String
   
