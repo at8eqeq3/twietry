@@ -6,7 +6,7 @@ class LinesController < ApplicationController
       #line = verse.lines.create
       #line.data = params[:data]
       #line.user = current_user
-      if verse.lines.count > 0 and verse.lines.last.user == current_user
+      if verse.is_last? current_user
         flash[:error] = t(:'lines.create.not_allowed')
         redirect_to verse_path(verse)
       else

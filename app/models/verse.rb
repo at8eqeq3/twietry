@@ -17,6 +17,10 @@ class Verse
     end
   end
   
+  def is_last? user
+    self.lines.count > 0 and self.lines.last.user == user
+  end
+  
   voteable self, :up => +1, :down => -1
 end
 

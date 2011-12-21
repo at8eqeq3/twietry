@@ -18,7 +18,7 @@
     .line.row
       - if current_user
       
-        - if @verse.lines.count > 0 and @verse.lines.last.user == current_user
+        - if @verse.is_last? current_user
           .alert-message.block-message.error
             %strong Добавлять строчки к одному стиху два раза подряд запрещено.
             %br
@@ -31,8 +31,11 @@
             %fieldset
               .clearfix
                 .input
-                  %input.xlarge.span6{:type => "text", :name => "data"}
+                  .span6
+                    %input.xlarge{:type => "text", :name => "data"}
+                    %span.help-block= t(:'lines.fields.data_hint')
                   %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
+                  
       - else
         %a{:href => "/auth/twitter"}
           %img{:src => "/assets/sign-in-with-twitter-d.png"}
