@@ -9,7 +9,7 @@
       - @verse.lines.each do |line|
         .line.row
           .span2
-            %img{:src => line.user.userpic, :width => 64, :height => 64}
+            %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
           .text.span8
             = line.data
     - else
@@ -25,7 +25,7 @@
             Подожди, пока кто-то еще напишет сюда, или выбери другой стих.
         - else
           .span2
-            %img{:src => current_user.userpic, :width => 64, :height => 64}
+            %img.identicon{:src => current_user.userpic, :width => 64, :height => 64}
           %form.form-stacked{:method => "post", :action => verse_line_path(@verse)}
             %input{:type => "hidden", :name => "authenticity_token", :value => form_authenticity_token}
             %fieldset
