@@ -3,7 +3,6 @@ class VersesController < ApplicationController
   def index
   	@all_verses = Verse.all
   end
-  
   def show
     @verse = Verse.find(params[:id])
   end

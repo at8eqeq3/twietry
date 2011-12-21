@@ -4,18 +4,22 @@
     $(function() {
       $("table#mytable.zebra-striped").tablesorter();
     });
-.table
-  %table#mytable.zebra-striped
-    %thead
-      %tr
-        %th
-          = t(:'verses.fields.title')
-        %th
-          = t(:'verses.author')
-        %th
-          = t(:'lines.title')
-        %th
-          = t(:'verses.last_user')
-        %th
-          = t(:'verses.status.title')
-    = render :partial => "verses/list2", :object => @all_verses, :as => :verses
+- if @all_verses.count == 0
+  %tbody
+    = "Nothing found :("
+- else
+  .table
+    %table#mytable.zebra-striped
+      %thead
+        %tr
+          %th
+            = t(:'verses.fields.title')
+          %th
+            = t(:'verses.author')
+          %th
+            = t(:'lines.title')
+          %th
+            = t(:'verses.last_user')
+          %th
+            = t(:'verses.status.title')
+      = render :partial => "verses/list2", :object => @all_verses, :as => :verses

@@ -4,8 +4,10 @@
   - verses.each do |verse|
     .verse-item
       %img.identicon{:src => "http://id.dxfoto.ru/do?s=8&q=3&l=#{verse.id}"}
-      .verse_item_data{:style => "padding-left: 28px;"}
-        = verse.user.name
-        = t(:'verses.started')
-        %a{:href => verse_path(verse)}= verse.title
-        = "(#{t(:'lines.p', :count => verse.lines.count)})"
+      = verse.user.name
+      = t(:'verses.started')
+      %a{:href => verse_path(verse)}= verse.title
+      %br
+      %br
+
+       
