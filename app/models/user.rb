@@ -10,4 +10,5 @@ class User
   field :last_activity_at, :type => DateTime
 
   has_many :verses
+  has_many :activities
 end

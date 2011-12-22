@@ -1,5 +1,7 @@
 Twietry::Application.routes.draw do
 
+  resources :activities
+
   match '/auth/:provider/callback' => 'sessions#create'
   match '/auth/failure' => 'sessions#fail'
   match '/auth/logout' => 'sessions#destroy'
