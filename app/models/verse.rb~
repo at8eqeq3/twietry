@@ -39,7 +39,7 @@ class Verse
       self.activities.create(:action => "finalize")
     else
       logger.warn "-in line addition"
-      self.activities.create(:user => self.current_user, :action => "add_line")
+      self.activities.create(:user => self.user, :action => "add_line")
     end
   end
 end
