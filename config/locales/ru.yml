@@ -8,6 +8,8 @@ ru:
     logged_out: Пока-пока! Приходите еще!
   home:
     index:
+      about: Где это я?
+      activity: Что происходит?
       title: Главная
     about:
       title: О проекте

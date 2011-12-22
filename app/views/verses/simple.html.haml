@@ -1,0 +1,11 @@
+%article{:id => @verse.id}
+  %header
+    %h1= @verse.title
+  .verse
+    - @verse.lines.each do |line|
+      = line.data
+      %br
+  .authors
+    - @users.each do |user|
+      = user.name
+      
