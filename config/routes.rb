@@ -6,6 +6,9 @@ Twietry::Application.routes.draw do
 
   resources :user #TODO make it better! 
   resources :verses do
+    member do
+      get 'simple'
+    end
     resources :lines, :only => [:create, :upvote, :downvote] do
       member do
         post 'create'

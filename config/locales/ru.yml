@@ -8,6 +8,8 @@ ru:
     logged_out: Пока-пока! Приходите еще!
   home:
     index:
+      about: Где это я?
+      activity: Что происходит?
       title: Главная
     about:
       title: О проекте
@@ -31,6 +33,10 @@ ru:
       title: Стихи
     show:
       no_lines: В этом стихе пока нет ни одной строчки. Все в твоих руках!
+    simple:
+      created_with: Это стихотворение создано с помощью проекта
+      created_by: В его создании принимали участие
+      joiner: и 
     new:
       title: Начать стих
     all:

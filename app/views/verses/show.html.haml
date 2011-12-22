@@ -9,7 +9,8 @@
       - @verse.lines.each do |line|
         .line.row
           .span2
-            %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
+            %a{:href => user_path(line.user)}
+              %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
           .text.span8
             = line.data
     - else
