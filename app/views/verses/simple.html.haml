@@ -1,11 +1,41 @@
-%article{:id => @verse.id}
-  %header
-    %h1= @verse.title
-  .verse
-    - @verse.lines.each do |line|
-      = line.data
-      %br
-  .authors
-    - @users.each do |user|
-      = user.name
+!!!DOCTYPE
+%html
+  %head
+    %title= "#{@verse.title} @ Twietry"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=EB+Garamond&subset=latin,cyrillic"
+    :css
+      body {
+        font-family: 'EB Garamond', serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      p {
+        margin: 0;
+      }
+      .verse {
+        width: 50em;
+        margin: 0 auto;
+      }
+      .verse p:nth-child(4) {
+        margin-bottom: 2ex;
+      }
+      .authors {
+        border-top: 1px solid #ddd;
+        margin-top: 3ex;
+      }
+  %body
+    %article{:id => @verse.id}
+      %header
+        %h1= @verse.title
+      .verse
+        - @verse.lines.each do |line|
+          %p= line.data
+      .authors
+        %p
+          = t(:'verses.simple.created_with')
+          %a{:href => root_path} Twietry
+        %p
+          = t(:'verses.simple.created_by')
+          = @users.to_sentence
       

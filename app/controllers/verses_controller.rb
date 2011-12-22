@@ -13,10 +13,10 @@ class VersesController < ApplicationController
     if @verse.is_finished
       @users = []
       @verse.lines.each do |line|
-        @users << line.user
+        @users << line.user.name
       end
       @users.uniq!
-      render :layout => 'simple'
+      render :layout => false
     else
       redirect_to :action => :show, :id => params[:id]
     end
