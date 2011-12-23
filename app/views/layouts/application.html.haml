@@ -66,4 +66,15 @@
               %li= link_to t(:'home.about.title'), about_path
               %li= link_to t(:'home.support.title'), support_path
               %li= link_to "@twietry", "http://twitter.com/twietry"
-
+    :javascript
+      var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.dxfoto.ru/" : "http://piwik.dxfoto.ru/");
+      document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    :javascript
+      try {
+        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+        piwikTracker.trackPageView();
+        piwikTracker.enableLinkTracking();
+      } catch( err ) {}
+    %noscript
+      %p
+        %img{:src => "http://piwik.dxfoto.ru/piwik.php?idsite=3", :style => "border: 0;", :alt => ""}
