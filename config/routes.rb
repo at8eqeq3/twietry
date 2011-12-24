@@ -1,12 +1,12 @@
 Twietry::Application.routes.draw do
 
-  resources :activities
+  resources :activities, :only => :index
 
   match '/auth/:provider/callback' => 'sessions#create'
   match '/auth/failure' => 'sessions#fail'
   match '/auth/logout' => 'sessions#destroy'
 
-  resources :user, :only => [:index, :show] do #TODO make it better! 
+  resources :users, :only => [:index, :show] do #TODO make it better! 
     resources :activities, :only => :index
   end
   resources :verses do
