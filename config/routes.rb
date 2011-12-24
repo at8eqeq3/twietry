@@ -6,7 +6,9 @@ Twietry::Application.routes.draw do
   match '/auth/failure' => 'sessions#fail'
   match '/auth/logout' => 'sessions#destroy'
 
-  resources :user #TODO make it better! 
+  resources :user, :only => [:index, :show] do #TODO make it better! 
+    resources :activities, :only => :index
+  end
   resources :verses do
     member do
       get 'simple'

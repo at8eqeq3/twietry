@@ -1,1 +1,15 @@
- 
+.page-header
+  %h1
+    = t(:'users.index.title')
+- @users.each do |user|
+  .row
+    .span2
+      %img.identicon{:src => user.userpic}
+    .span9
+      %h2= user.name
+      %p 
+        = link_to t(:'user.show.title'), user_path(user)
+        |
+        = link_to user.twitter
+    .span1
+      TODO rating
