@@ -43,6 +43,11 @@ h1 small {
   padding-top: 40px;
   height: 80px;
   box-shadow: 0 5px 5px rgba(33,0,11,0.15);
+  background: url('/assets/top-bg.png');
+}
+
+.container.body {
+  background: url('/assets/body-bg.png');
 }
 
 .twi {
@@ -119,4 +124,15 @@ img.identicon {
   float: left;
   padding: 1px;
   border: 1px solid #999;
+}
+
+.vcard {
+  background-color: #1d0d4e;
+  padding: 8px;
+}
+
+.vcard .info {
+  background-color: #f7f7f7;
+  border: 1px solid #110044;
+  padding: 0 10px;
 }
