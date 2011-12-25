@@ -51,6 +51,7 @@ ru:
       few: %{count} строчки
       many: %{count} строчек
     fields:
+      data_hint: Например, %{inspiration}
       create: Добавить
     title: Строк
   activities:
