@@ -54,12 +54,14 @@
             %p= t(:'layout.whatis')
             %p
               %small
-                Running Twietry/dev on Rails
+                Running Twietry /
+                = ENV['TWIETRY_MODE']
+                = ENV['TWIETRY_VERSION']
+                on Rails
                 = Rails.version
                 in
                 = Rails.env
-                environment,
-                = ENV['TESTVAR']
+                environment
           .span2.offset2
             %img{:src => "/assets/logo100.png"}
           .span4.offset2

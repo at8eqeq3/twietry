@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.uid
     #current_user = @user
       flash[:success] = t(:'auth.success', :name => @user.name)
-      redirect_to(:back)
+      redirect_to request.env['omniauth.origin'] || root_url
     rescue Exception => e
       render :text => e.message
     end

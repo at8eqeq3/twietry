@@ -6,6 +6,7 @@ class VersesController < ApplicationController
   
   def show
     @verse = Verse.find(params[:id])
+    @inspiration = Inspiration.all[rand(Inspiration.count)]
   end
   
   def simple
