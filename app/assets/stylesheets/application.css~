@@ -46,6 +46,10 @@ h1 small {
   background: url('/assets/top-bg.png');
 }
 
+.container {
+  background: url('/assets/body-bg.png');
+}
+
 .twi {
   padding-top: 8px;
 }
