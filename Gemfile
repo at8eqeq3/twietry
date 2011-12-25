@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -11,9 +11,9 @@ gem 'json'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+  gem 'sass-rails',   '~> 3.1.5'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
@@ -27,7 +27,7 @@ gem 'haml-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+#gem 'ruby-debug'
 gem "SystemTimer",        ">= 1.2.0"
 gem "mongoid",            ">= 2.1.5"
 gem "bson_ext",           ">= 1.3.1"
@@ -45,6 +45,7 @@ gem "launchy",            ">= 0.4.0", :group => :test
 
 # Я люблю OmniAuth, в нем можно прятать своих юзеров
 gem "omniauth",           ">= 0.2.6"
+gem "omniauth-twitter"
 gem "twitter"
 
 gem "russian"
