@@ -1,5 +1,7 @@
 Twietry::Application.routes.draw do
 
+  resources :hashtags
+
   resources :activities, :only => :index
 
   match '/auth/:provider/callback' => 'sessions#create'

@@ -2,9 +2,9 @@ class SessionsController < ApplicationController
   def create
     begin
       uid = auth_hash['uid']
-      name = auth_hash['user_info']['name']
-      userpic = auth_hash['user_info']['image']
-      twitter = auth_hash['user_info']['urls']['Twitter']
+      name = auth_hash['info']['name']
+      userpic = auth_hash['info']['image']
+      twitter = auth_hash['info']['urls']['Twitter']
       @user = User.find_or_initialize_by(:uid => uid)
       @user.name = name
       @user.userpic = userpic
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       flash[:success] = t(:'auth.success', :name => @user.name)
       redirect_to request.env['omniauth.origin'] || root_url
     rescue Exception => e
-      render :text => e.message
+      render :text => e.backtrace
     end
   end
   
