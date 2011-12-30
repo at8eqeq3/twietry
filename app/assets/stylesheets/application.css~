@@ -22,6 +22,7 @@ h1 small {
 
 .topbar {
   box-shadow: 0 8px 8px rgba(17,0,68,0.3);
+  font-size: 19px;
 }
 
 .topbar-inner {
@@ -42,12 +43,11 @@ h1 small {
   padding-top: 40px;
   height: 80px;
   box-shadow: 0 5px 5px rgba(33,0,11,0.15);
-  background: url('/assets/twietry-top-branding.png') repeat-x;
-  background-position: 0 40px;
+  background: url('/assets/top-bg.png');
 }
 
-.top-branding img {
-  margin: 0 auto;
+.container {
+  background: url('/assets/body-bg.png');
 }
 
 .twi {
@@ -55,6 +55,9 @@ h1 small {
 }
 .signin {
 	text-align: center;
+	}
+.table {
+	margin-top: 20px;
 	}
 
 /*footer .row {
@@ -83,7 +86,6 @@ h1 small {
 .top-padded {
   margin-top: 6px;
 }
-
 .alert-message {
   margin-top: 8px;
   margin-bottom: 4px;
@@ -122,4 +124,15 @@ img.identicon {
   float: left;
   padding: 1px;
   border: 1px solid #999;
+}
+
+.vcard {
+  background-color: #1d0d4e;
+  padding: 8px;
+}
+
+.vcard .info {
+  background-color: #f7f7f7;
+  border: 1px solid #110044;
+  padding: 0 10px;
 }

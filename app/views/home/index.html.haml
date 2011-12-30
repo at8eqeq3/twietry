@@ -6,4 +6,4 @@
   .span6
     .page-header
       %h2= t(:'home.index.activity')
-    %p TODO implement activities and show a small list here
+    = render :partial => "activities/list", :collection => @activities, :as => :activity

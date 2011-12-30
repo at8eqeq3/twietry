@@ -34,7 +34,7 @@
                 .input
                   .span6
                     %input.xlarge{:type => "text", :name => "data"}
-                    %span.help-block= t(:'lines.fields.data_hint')
+                    %span.help-block= t(:'lines.fields.data_hint', :inspiration => @inspiration.data)
                   %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
                   
       - else

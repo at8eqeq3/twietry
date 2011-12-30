@@ -1,0 +1,23 @@
+.page-header
+  %h1
+    = t(:'users.show.title')
+.vcard.row
+  .span1
+    %img{:src => @user.userpic}
+  .info.span10
+    %h2= @user.name
+    %p
+      %a{:href => @user.twitter}= @user.twitter
+    %p
+      TODO rating
+.activities.row
+  %h2= t(:'users.show.activities.title')
+  - @user.activities.order_by([[:created_at, :desc]]).each do |activity|
+    %p
+      = distance_of_time_in_words_to_now(activity.created_at)
+      = t(:'activities.ago')
+      = t(:"activities.actions.#{activity.action}")
+      &laquo;
+      = link_to activity.trackable.title, activity.trackable
+      &raquo;
+  %p.index-link= link_to t(:'activities.index.title'), user_activities_path(@user)

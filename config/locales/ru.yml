@@ -51,6 +51,11 @@ ru:
       few: %{count} строчки
       many: %{count} строчек
     fields:
+      data_hint: Например, %{inspiration}
       create: Добавить
     title: Строк
-	
+  activities:
+    ago: назад
+    actions:
+      create: создал стих
+      add_line: добавил строчку к стиху

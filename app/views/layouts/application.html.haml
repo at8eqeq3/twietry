@@ -31,7 +31,7 @@
               %img{:src => "/assets/sign-in-with-twitter-d.png"}
     .top-branding
       %img{:src => "/assets/logo80.png"}
-    .container
+    .container.body
       - flash.each do |level, message|
         - if message.is_a? String
           .row
@@ -54,7 +54,10 @@
             %p= t(:'layout.whatis')
             %p
               %small
-                Running Twietry/dev on Rails
+                Running Twietry /
+                = ENV['TWIETRY_MODE']
+                = ENV['TWIETRY_VERSION']
+                on Rails
                 = Rails.version
                 in
                 = Rails.env
