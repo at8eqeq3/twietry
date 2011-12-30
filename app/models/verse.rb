@@ -13,7 +13,7 @@ class Verse
   
   
   belongs_to :user
-  has_many :activities, :as => :trackable
+  has_many :activities, :as => :trackable, :dependent => :destroy
   #belongs_to :language
   embeds_many :lines do 
     def find_good

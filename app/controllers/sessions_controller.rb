@@ -2,9 +2,9 @@ class SessionsController < ApplicationController
   def create
     begin
       uid = auth_hash['uid']
-      name = auth_hash['user_info']['name']
-      userpic = auth_hash['user_info']['image']
-      twitter = auth_hash['user_info']['urls']['Twitter']
+      name = auth_hash['info']['name']
+      userpic = auth_hash['info']['image']
+      twitter = auth_hash['info']['urls']['Twitter']
       @user = User.find_or_initialize_by(:uid => uid)
       @user.name = name
       @user.userpic = userpic
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   end
   
   def fail
-    flash[:error] = t(:'auth.error', :message => params[:message])
+    flash[:error] = t(:'auth.failure', :message => params[:message])
     redirect_to root_url
   end
   

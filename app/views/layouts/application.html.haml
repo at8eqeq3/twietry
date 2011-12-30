@@ -16,7 +16,7 @@
           %ul.nav
             %li= link_to t(:'home.index.title'), root_path
             %li= link_to t(:'home.about.title'), about_path
-            %li= link_to t(:'home.support.title'), support_path
+            %li= link_to t(:'users.index.title'), users_path
             %li= link_to t(:'verses.all.title'), verses_path
             %li= link_to t(:'verses.new.title'), new_verse_path
           - if current_user
@@ -24,7 +24,7 @@
               %li.dropdown
                 %a.dropdown-toggle{:href => "#"}= current_user.name
                 %ul.dropdown-menu
-                  %li= link_to t(:'user.show.title'), user_path(current_user)
+                  %li= link_to t(:'users.show.title'), user_path(current_user)
                   %li= link_to t(:'auth.logout'), auth_logout_path
           - else
             %a.twi.pull-right{:href => "/auth/twitter"}

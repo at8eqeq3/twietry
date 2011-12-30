@@ -1,12 +1,16 @@
 class VersesController < ApplicationController
 
   def index
-  	@all_verses = Verse.all
+    @all_verses = Verse.all
   end
   
   def show
     @verse = Verse.find(params[:id])
-    @inspiration = Inspiration.all[rand(Inspiration.count)]
+    @inspiration = Inspiration.all[rand(Inspiration.count)] # so sad :(
+    unless @verse
+      flash[:error] = t(:'verses.show.notfound')
+      redirect_to verses_url
+    end
   end
   
   def simple

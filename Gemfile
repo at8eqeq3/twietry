@@ -26,6 +26,8 @@ gem 'haml-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
+gem 'translate-rails3', :require => 'translate', :group => :development
+
 # To use debugger
 #gem 'ruby-debug'
 gem "SystemTimer",        ">= 1.2.0"

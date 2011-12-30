@@ -1,9 +1,6 @@
 development:
-  host:  staff.mongohq.com
-  port: 10004
-  database: twietry
-  username: wavemeup
-  password: Shippuuden4
+  host: localhost
+  database: twietry_development
 
 test:
   host: localhost
@@ -11,13 +8,11 @@ test:
 
 # set these environment variables on your prod server
 production:
-  host: localhost
-  #<%= ENV['MONGOID_HOST'] %>
-  #port: <%= ENV['MONGOID_PORT'] %>
-  #username: <%= ENV['MONGOID_USERNAME'] %>
+  host: <%= ENV['TWIETRY_MONGOID_HOST'] %>
+  port: <%= ENV['TWIETRY_MONGOID_PORT'] %>
+  username: <%= ENV['TWIETRY_MONGOID_USER'] %>
   #password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: i_love_the_rain
-  #<%= ENV['MONGOID_DATABASE'] %>
+  database: <%= ENV['TWIETRY_MONGOID_DB'] %>
   # slaves:
   #   - host: slave1.local
   #     port: 27018
