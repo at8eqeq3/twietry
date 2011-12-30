@@ -8,7 +8,8 @@ Twietry::Application.routes.draw do
   match '/auth/failure' => 'sessions#fail'
   match '/auth/logout' => 'sessions#destroy'
 
-  resources :users, :only => [:index, :show] do #TODO make it better! 
+  resources :users, :only => [:index, :show] do #TODO make it better!
+    get 'page/:page', :action => :index, :on => :collection
     resources :activities, :only => :index
   end
   resources :verses do

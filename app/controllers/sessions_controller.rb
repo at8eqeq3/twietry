@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   end
   
   def fail
-    flash[:error] = t(:'auth.error', :message => params[:message])
+    flash[:error] = t(:'auth.failure', :message => params[:message])
     redirect_to root_url
   end
   

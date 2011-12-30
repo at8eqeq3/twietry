@@ -8,8 +8,9 @@
     .span9
       %h2= user.name
       %p 
-        = link_to t(:'user.show.title'), user_path(user)
+        = link_to t(:'users.show.title'), user_path(user)
         |
         = link_to user.twitter, user.twitter
     .span1
       TODO rating
+= paginate @users

@@ -13,8 +13,9 @@ class Verse
   
   
   belongs_to :user
-  has_many :activities, :as => :trackable
+  has_many :activities, :as => :trackable, :dependent => :destroy
   has_and_belongs_to_many :hashtags
+
   #belongs_to :language
   embeds_many :lines do 
     def find_good
