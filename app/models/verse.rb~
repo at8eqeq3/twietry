@@ -15,7 +15,7 @@ class Verse
   belongs_to :user
   has_many :activities, :as => :trackable
   #belongs_to :language
-  embeds_many :lines, :cascade_callbacks => true do 
+  embeds_many :lines do 
     def find_good
       where(:votes_point.gt => 0)
     end
