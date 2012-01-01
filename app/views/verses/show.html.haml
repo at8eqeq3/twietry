@@ -12,7 +12,7 @@
             %a{:href => user_path(line.user)}
               %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
           .text.span8
-            = line.data
+            = raw line.data.gsub!(/#\w+/){|ht| raw(link_to ht, hashtag_path(@verse.hashtags.where(:data => ht).first))}
     - else
       .line.row
         .alert-message.block-message.warning= t(:'verses.show.no_lines')

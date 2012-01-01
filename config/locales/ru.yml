@@ -16,6 +16,11 @@ ru:
     support:
       title: Помогающая помощь
   verses:
+    p:
+      zero: стихов нет
+      one: один стих
+      few: %{count} стиха
+      many: %{count} стихов
     author: Автор
     last_user: Последний участник
     status:
@@ -48,7 +53,7 @@ ru:
   lines:
     p:
       zero: строчек нет
-      one: 1 строчка
+      one: одна строчка
       few: %{count} строчки
       many: %{count} строчек
     fields:

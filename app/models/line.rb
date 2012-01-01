@@ -18,12 +18,13 @@ class Line
   end
   
   def find_hashtags
-    self.data.gsub! /#\w+/ do |match|
-      ht = Hashtag.find_or_create_by(:data => match)
-      self.verse.hashtags << ht
-      self.verse.save!
-      "<a href=\"/hashtags/#{ht.id}\">#{match}</a>" # fuck `url_for`
+    self.data.gsub /#\w+/ do |match|
+      #ht = Hashtag.find_or_create_by(:data => match)
+      self.verse.hashtags << Hashtag.find_or_create_by(:data => match)
+      #tag = self.verse.hashtags.where(:data => match).first
+      #"<a href=\"/hashtags/#{tag.id}\">#{match}</a>" # fuck `url_for`
     end
+    #self.verse.save!
   end
   
 end
