@@ -1,0 +1,8 @@
+.page-title
+  %h1
+    = t(:'activities.index.title')
+    - if params[:user_id]
+      %small
+        = t(:'activities.attribution')
+        = link_to @activities.first.user.name, @activities.first.user
+= render :partial => @activities

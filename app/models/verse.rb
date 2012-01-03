@@ -27,6 +27,10 @@ class Verse
     self.lines.count > 0 and self.lines.last.user == user
   end
   
+  def full_title
+    self.title == "***" ? self.lines.count > 0 ? self.lines.first.data : "* * *" : self.title
+  end
+  
   voteable self, :up => +1, :down => -1
   
   protected
