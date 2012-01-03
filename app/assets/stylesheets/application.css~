@@ -136,3 +136,11 @@ img.identicon {
   border: 1px solid #110044;
   padding: 0 10px;
 }
+
+.item {
+  margin-bottom: 8px;
+  background: transparent;
+}
+.item:hover {
+  background-color: #f5e9fa;
+}

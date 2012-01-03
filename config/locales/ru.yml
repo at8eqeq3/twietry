@@ -16,6 +16,11 @@ ru:
     support:
       title: Помогающая помощь
   verses:
+    p:
+      zero: стихов нет
+      one: один стих
+      few: %{count} стиха
+      many: %{count} стихов
     author: Автор
     last_user: Последний участник
     status:
@@ -34,6 +39,8 @@ ru:
     show:
       no_lines: В этом стихе пока нет ни одной строчки. Все в твоих руках!
       notfound: Стих не найден. Как же так?
+      created_by: Начал(а)
+      last_line_by: последнюю строчку добавил(а)
     simple:
       created_with: Это стихотворение создано с помощью проекта
       created_by: В его создании принимали участие
@@ -48,11 +55,12 @@ ru:
   lines:
     p:
       zero: строчек нет
-      one: 1 строчка
+      one: одна строчка
       few: %{count} строчки
       many: %{count} строчек
     fields:
-      data_hint: Например, %{inspiration}
+      data_hint: "От 10 до 100 символов. Можно использовать #тэги"
+      data_hint_inspiration: Например,
       create: Добавить
     title: Строк
     create:
@@ -71,3 +79,6 @@ ru:
         title: Действия
     index:
       title: Поэты
+  hashtags:
+    index:
+      title: Тэги
