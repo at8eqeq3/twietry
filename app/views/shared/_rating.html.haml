@@ -1,5 +1,10 @@
 .rating
-  %em= voteable.votes_point
-- if current_user and !voteable.voted_by?(current_user)
-  = link_to raw("&uArr;"), {:controller => voteable.collection.name, :action => "upvote", :id => voteable.id}, :method => :post, :remote => true, :class => "btn success"
-  = link_to raw("&dArr;"), {:controller => voteable.collection.name, :action => "downvote", :id => voteable.id}, :method => :post, :remote => true, :class => "btn danger"
+  .score[voteable, :score]
+    %em= voteable.votes_point unless hide_rating
+- if current_user
+  .vote[voteable, :vote]
+    - if voteable.voted_by?(current_user)
+      = voteable.vote_value(current_user)
+    - else
+      = link_to raw("&uArr;"), {:controller => voteable.collection.name, :action => "love", :id => voteable.id}, :method => :post, :remote => true, :class => "btn success"
+      = link_to raw("&dArr;"), {:controller => voteable.collection.name, :action => "hate", :id => voteable.id}, :method => :post, :remote => true, :class => "btn danger"

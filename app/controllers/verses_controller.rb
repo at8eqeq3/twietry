@@ -42,5 +42,25 @@ class VersesController < ApplicationController
       render :action => 'new'
     end
   end
+  
+  def love
+    @verse = Verse.find(params[:id])
+    if @verse
+      current_user.vote(@verse, :up)
+      respond_to do |f|
+        f.html {redirect_to(verse_path(@verse))}
+        f.js
+      end
+    else
+      respond_to do |f|
+        f.html {redirect_to(verses_path)}
+        f.js {render :nothing}
+      end
+    end
+  end
+  
+  def hate
+  
+  end
 
 end

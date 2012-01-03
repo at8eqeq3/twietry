@@ -1,0 +1,2 @@
+$(".score#score_verse_<%= @verse.id %>").html("<%= @verse.votes_point %>");
+$(".vote#vote_verse_<%= @verse.id %>").html("<%= @verse.vote_value(current_user) %>")
