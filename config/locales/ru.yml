@@ -1,4 +1,11 @@
 ru:
+  views:
+    pagination:
+      first: "&lArr;"
+      last: "&rArr;"
+      previous: "&larr;"
+      next: "&rarr;"
+      truncate: "..."
   layout:
     whatis: Это такой веб-сайт, где можно сочинять стихи всем миром по одной строчке
   auth:
