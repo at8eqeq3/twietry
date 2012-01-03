@@ -3,7 +3,9 @@
     %img.identicon{:src => "http://id.dxfoto.ru/do?s=12&q=5&l=#{verse.id}"}
   .span8
     %h2
-      %a{:href => verse_path(verse)}= verse.title
+      %a{:href => verse_path(verse)}= verse.full_title
+      %small
+        = verse.idea
     %p
       = t(:'verses.show.created_by')
       = link_to verse.user.name, user_path(verse.user)
