@@ -12,7 +12,7 @@
             %a{:href => user_path(line.user)}
               %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
           .text.span8
-            = line.data
+            = raw line.data.gsub!(/#\w+/){|ht| raw(link_to ht, hashtag_path(@verse.hashtags.where(:data => ht).first))}
     - else
       .line.row
         .alert-message.block-message.warning= t(:'verses.show.no_lines')
@@ -34,7 +34,12 @@
                 .input
                   .span6
                     %input.xlarge{:type => "text", :name => "data"}
-                    %span.help-block= t(:'lines.fields.data_hint', :inspiration => @inspiration.data)
+                    %span.help-block
+                      = t(:'lines.fields.data_hint')
+                      %br
+                      - if @verse.lines.count == 0
+                        = t(:'lines.fields.data_hint_inspiration')
+                        = raw("&laquo;") + @inspiration.data + raw("&raquo;")
                   %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
                   
       - else

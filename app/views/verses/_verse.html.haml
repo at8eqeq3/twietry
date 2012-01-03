@@ -1,0 +1,17 @@
+.row.item
+  .span2
+    %img.identicon{:src => "http://id.dxfoto.ru/do?s=12&q=5&l=#{verse.id}"}
+  .span8
+    %h2
+      %a{:href => verse_path(verse)}= verse.title
+    %p
+      = t(:'verses.show.created_by')
+      = link_to verse.user.name, user_path(verse.user)
+      - if verse.lines.count > 0
+        |
+        = t(:'verses.show.last_line_by')
+        = link_to verse.lines.last.user.name, user_path(verse.lines.last.user)
+      |
+      = t(:'lines.p', :count => verse.lines.count)
+  .span2
+    TODO rating
