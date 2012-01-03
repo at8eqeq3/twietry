@@ -81,6 +81,9 @@ ru:
     actions:
       create: создал стих
       add_line: добавил строчку к стиху
+    attribution: пользователя
+    index:
+      title: Все действия
   users:
     show:
       title: Профиль

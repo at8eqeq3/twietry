@@ -1,0 +1,14 @@
+.row.item
+  .span2
+    %img.identicon{:src => user.userpic}
+  .span9
+    %h2= link_to_unless_current user.name, user
+    %p 
+      = link_to user.twitter, user.twitter
+      |
+      = t(:'verses.p', :count => user.verses.count)
+      |
+      = t(:'lines.p', :count => user.lines_count)
+  .span1
+    .rating
+      %em= user.rating || 0

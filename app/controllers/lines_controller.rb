@@ -12,6 +12,7 @@ class LinesController < ApplicationController
       else
         begin
           verse.lines.create(:data => params[:data], :user => current_user)
+          current_user.verses_count.inc
           #verse.save!
           flash[:success] = t(:'lines.create.success')
         rescue Exception => e

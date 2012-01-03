@@ -9,7 +9,10 @@ class User
   field :secret, :type => String
   field :last_login_at, :type => DateTime
   field :last_activity_at, :type => DateTime
+  field :rating, :type => Integer
+  field :lines_count, :type => Integer
 
   has_many :verses
+  #has_many :lines
   has_many :activities
 end
