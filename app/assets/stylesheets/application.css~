@@ -46,7 +46,7 @@ h1 small {
   background: url('/assets/top-bg.png');
 }
 
-.container {
+.container.body {
   background: url('/assets/body-bg.png');
 }
 

@@ -1,7 +1,7 @@
 class VersesController < ApplicationController
 
   def index
-    @all_verses = Verse.all
+    @verses = Verse.order_by([[:uid, :desc]]).page(params[:page])
   end
   
   def show
