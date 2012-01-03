@@ -3,9 +3,7 @@
     %img.identicon{:src => "http://id.dxfoto.ru/do?s=12&q=5&l=#{verse.id}"}
   .span8
     %h2
-      %a{:href => verse_path(verse)}= verse.full_title
-      %small
-        = verse.idea
+      %a{:href => verse_path(verse), :title => verse.idea}= verse.full_title
     %p
       = t(:'verses.show.created_by')
       = link_to verse.user.name, user_path(verse.user)
@@ -16,4 +14,4 @@
       |
       = t(:'lines.p', :count => verse.lines.count)
   .span2
-    TODO rating
+    = render :partial => "shared/rating", :locals => {:voteable => verse}
