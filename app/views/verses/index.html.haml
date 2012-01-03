@@ -1,6 +1,9 @@
 .page-header
-  %h1= t(:'verses.index.title')
-  %small
-    = t(:'shared.page')
-    = params[:page] || 1
+  %h1
+    = t(:'verses.index.title')
+    %small
+      &mdash;
+      = t(:'shared.page')
+      = params[:page] || 1
 = render :partial => @verses
+= paginate @verses

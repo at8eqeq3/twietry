@@ -6,6 +6,8 @@ ru:
     failure: "Ошибка авторизации. Твиттер сказал: %{message}"
     logout: Выйти
     logged_out: Пока-пока! Приходите еще!
+  shared:
+    page: страница
   home:
     index:
       about: Где это я?
