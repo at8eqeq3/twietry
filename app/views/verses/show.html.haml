@@ -1,8 +1,12 @@
 .page-header
-  %h1
-    = @verse.full_title
-    %br
-    %small= @verse.idea
+  .row
+    .span10
+      %h1
+        = @verse.full_title
+        %br
+        %small= @verse.idea
+    .span2
+      = render :partial => "shared/rating", :locals => {:voteable => @verse, :hide_rating => false}
 .row
   .span10.offset1
     - if @verse.lines.count > 0
@@ -18,7 +22,6 @@
         .alert-message.block-message.warning= t(:'verses.show.no_lines')
     .line.row
       - if current_user
-      
         - if @verse.is_last? current_user
           .alert-message.block-message.error
             %strong Добавлять строчки к одному стиху два раза подряд запрещено.

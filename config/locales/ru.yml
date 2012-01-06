@@ -15,6 +15,9 @@ ru:
     logged_out: Пока-пока! Приходите еще!
   shared:
     page: страница
+    rating:
+      up: нравится
+      down: не нравится
   home:
     index:
       about: Где это я?
