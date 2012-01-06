@@ -1,10 +1,14 @@
 .page-header
-  %h1
-    = @verse.full_title
-    %br
-    %small= @verse.idea
+  .row
+    .span10
+      %h1
+        = @verse.full_title
+        %br
+        %small= @verse.idea
+    .span2
+      = render :partial => "shared/rating", :locals => {:voteable => @verse, :hide_rating => false}
 .row
-  .span10.offset1
+  .span12
     - if @verse.lines.count > 0
       - @verse.lines.each do |line|
         .line.row
@@ -13,17 +17,25 @@
               %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
           .text.span8
             = raw line.data.gsub!(/#\w+/){|ht| raw(link_to ht, hashtag_path(@verse.hashtags.where(:data => ht).first))}
+          .span2
+            .rating
+              - if current_user
+                .vote[line, :vote]
+                  - if line.voted_by?(current_user)
+                    %span{:class => line.vote_value(current_user)}= t(:"shared.rating.#{line.vote_value(current_user)}")
+                  - else
+                    = link_to raw("&uArr;"), love_verse_line_path(@verse, line), :method => :post, :remote => true, :class => "btn success"
+                    = link_to raw("&dArr;"), hate_verse_line_path(@verse, line), :method => :post, :remote => true, :class => "btn danger"
     - else
       .line.row
         .alert-message.block-message.warning= t(:'verses.show.no_lines')
-    .line.row
+    .line.row.new-line
       - if current_user
-      
         - if @verse.is_last? current_user
           .alert-message.block-message.error
-            %strong Добавлять строчки к одному стиху два раза подряд запрещено.
+            %strong= t(:'lines.new.forbidden')
             %br
-            Подожди, пока кто-то еще напишет сюда, или выбери другой стих.
+            = t(:'lines.new.forbidden2')
         - else
           .span2
             %img.identicon{:src => current_user.userpic, :width => 64, :height => 64}
@@ -43,6 +55,9 @@
                   %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
                   
       - else
-        %a{:href => "/auth/twitter"}
-          %img{:src => "/assets/sign-in-with-twitter-d.png"}
+        %p.centered
+          = t(:'auth.unauthorized')
+          %br
+          %a{:href => "/auth/twitter"}
+            %img{:src => "/assets/sign-in-with-twitter-d.png"}
 

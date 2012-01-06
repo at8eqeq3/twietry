@@ -46,7 +46,7 @@ h1 small {
   background: url('/assets/top-bg.png');
 }
 
-.container.body {
+body {
   background: url('/assets/body-bg.png');
 }
 
@@ -54,9 +54,25 @@ h1 small {
   text-align: center;
 }
 
-.rating em {
+.rating .score {
   font-size: 1.5em;
+  font-weight: bold;
 }
+
+.vote {
+  text-align: center;
+}
+
+.vote .up {
+  color: #448855;
+  font-size: 1.2em;
+}
+
+.vote .down {
+  color: #885544;
+  font-size: 1.2em;
+}
+
 .twi {
   padding-top: 8px;
 }
@@ -154,4 +170,8 @@ img.identicon {
 
 .hashtag {
   padding: 2px 6px;
+}
+
+.new-line {
+  margin-top: 14px;
 }

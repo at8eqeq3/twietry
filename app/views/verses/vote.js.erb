@@ -1,0 +1,3 @@
+$(".score#score_verse_<%= @verse.id %>").html("<%= @verse.votes_point %>");
+$(".vote#vote_verse_<%= @verse.id %>").html("<span><%= t(:"shared.rating.#{@verse.vote_value(current_user)}") %></span>")
+$(".vote#vote_verse_<%= @verse.id %> span").attr("class", "<%= @verse.vote_value(current_user) %>");

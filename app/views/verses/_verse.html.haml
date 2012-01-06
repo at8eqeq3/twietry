@@ -14,4 +14,4 @@
       |
       = t(:'lines.p', :count => verse.lines.count)
   .span2
-    = render :partial => "shared/rating", :locals => {:voteable => verse}
+    = render :partial => "shared/rating", :locals => {:voteable => verse, :hide_rating => false}

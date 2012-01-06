@@ -13,6 +13,8 @@ class Line
   embedded_in :verse
   belongs_to :user
   
+  voteable self, :up => +1, :down => -1
+  
   def post_to_twitter
     # TODO post it!
   end

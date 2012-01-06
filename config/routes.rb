@@ -16,14 +16,14 @@ Twietry::Application.routes.draw do
     get 'page/:page', :action => :index, :on => :collection
     member do
       get 'simple'
-      post 'upvote'
-      post 'downvote'
+      post 'love'
+      post 'hate'
     end
     resources :lines, :only => [:create, :upvote, :downvote] do
       member do
         post 'create'
-        post 'upvote'
-        post 'downvote'
+        post 'love'
+        post 'hate'
       end
     end
   end
