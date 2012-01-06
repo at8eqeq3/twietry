@@ -171,3 +171,10 @@ img.identicon {
 .hashtag {
   padding: 2px 6px;
 }
+
+.new-line {
+  margin-top: 14px;
+}
+.centered {
+  text-align: center;
+}

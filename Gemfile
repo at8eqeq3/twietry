@@ -33,7 +33,7 @@ gem 'translate-rails3', :require => 'translate', :group => :development
 gem "SystemTimer",        ">= 1.2.0"
 gem "mongoid",            ">= 2.1.5"
 gem "bson_ext",           ">= 1.3.1"
-gem "voteable_mongo"
+gem "voteable_mongo", :git => "git://github.com/sujal/voteable_mongo.git"
 gem "kaminari"
 
 # Я люблю тесты, в них можно прятать свои спеки

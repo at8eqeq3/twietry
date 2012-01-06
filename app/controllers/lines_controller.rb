@@ -28,6 +28,55 @@ class LinesController < ApplicationController
     end
   end
 
+  def love
+    @verse = Verse.find(params[:verse_id])
+    if @verse
+      @line = @verse.lines.find(params[:id])
+      if @line
+        @line.user.inc(:rating, 2)
+        current_user.vote(@line, :up)
+        respond_to do |f|
+          f.html {redirect_to(verse_path(@verse))}
+          f.js {render :action => "vote"}
+        end
+      else
+        respond_to do |f|
+          f.html {redirect_to(verse_path(@verse))}
+          f.js {render :nothing}
+        end
+      end
+    else
+      respond_to do |f|
+        f.html {redirect_to(verses_path)}
+        f.js {render :nothing}
+      end
+    end
+  end
+  
+  def hate
+    @verse = Verse.find(params[:verse_id])
+    if @verse
+      @line = @verse.lines.find(params[:id])
+      if @line
+        @line.user.inc(:rating, -2)
+        current_user.vote(@line, :down)
+        respond_to do |f|
+          f.html {redirect_to(verse_path(@verse))}
+          f.js {render :action => "vote"}
+        end
+      else
+        respond_to do |f|
+          f.html {redirect_to(verse_path(@verse))}
+          f.js {render :nothing}
+        end
+      end
+    else
+      respond_to do |f|
+        f.html {redirect_to(verses_path)}
+        f.js {render :nothing}
+      end
+    end
+  end
 
 
 end

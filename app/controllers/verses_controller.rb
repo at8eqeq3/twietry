@@ -15,16 +15,16 @@ class VersesController < ApplicationController
   
   def simple
     @verse = Verse.find(params[:id])
-    if @verse.is_finished
+    #if @verse.is_finished
       @users = []
       @verse.lines.each do |line|
         @users << line.user.name
       end
       @users.uniq!
       render :layout => false
-    else
-      redirect_to :action => :show, :id => params[:id]
-    end
+    #else
+    #  redirect_to :action => :show, :id => params[:id]
+    #end
   end
 
   def new
@@ -46,7 +46,7 @@ class VersesController < ApplicationController
   def love
     @verse = Verse.find(params[:id])
     if @verse
-      current_user.inc(:rating, 1)
+      @verse.user.inc(:rating, 1)
       current_user.vote(@verse, :up)
       respond_to do |f|
         f.html {redirect_to(verse_path(@verse))}
@@ -64,7 +64,7 @@ class VersesController < ApplicationController
     @verse = Verse.find(params[:id])
     if @verse
       current_user.vote(@verse, :down)
-      current_user.inc(:rating, -1)
+      @verse.user.inc(:rating, -1)
       respond_to do |f|
         f.html {redirect_to(verse_path(@verse))}
         f.js {render :action => "vote"}
