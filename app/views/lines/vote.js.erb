@@ -1,0 +1,2 @@
+$(".vote#vote_line_<%= @line.id %>").html("<span><%= t(:"shared.rating.#{@line.vote_value(current_user)}") %></span>")
+$(".vote#vote_verse_<%= @line.id %> span").attr("class", "<%= @line.vote_value(current_user) %>");
