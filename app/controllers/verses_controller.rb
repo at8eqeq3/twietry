@@ -46,6 +46,7 @@ class VersesController < ApplicationController
   def love
     @verse = Verse.find(params[:id])
     if @verse
+      current_user.inc(:rating, 1)
       current_user.vote(@verse, :up)
       respond_to do |f|
         f.html {redirect_to(verse_path(@verse))}
@@ -63,6 +64,7 @@ class VersesController < ApplicationController
     @verse = Verse.find(params[:id])
     if @verse
       current_user.vote(@verse, :down)
+      current_user.inc(:rating, -1)
       respond_to do |f|
         f.html {redirect_to(verse_path(@verse))}
         f.js {render :action => "vote"}
