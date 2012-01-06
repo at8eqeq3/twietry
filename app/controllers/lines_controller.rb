@@ -1,5 +1,7 @@
 class LinesController < ApplicationController
 
+  before_filter :authenticate_user!, :only => [:create, :love, :hate]
+
   def create
     verse = Verse.find(params[:verse_id])
     if verse
