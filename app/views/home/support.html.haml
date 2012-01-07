@@ -1,18 +1,6 @@
-%section#support
-  %header
-    %h1= t(:'home.support.title')
-  .row
-    %article#support-needhelp
-      %header
-        %h2= t(:'home.support.needhelp.title')
-      %p You can help by:
-      %ul
-        %li Sending bugreports
-        %li Sending patches, as we're opensource
-        %li Improving design and UX
-        %li Proposing ideas of new features and events
-        %li Moderating user-generated content
-        %li Sending some money to us (pleeease)
-        %li Promoting this project
-      %p Don't be shy, every help is highly appreciated. Thank you
-        
+.page-header
+  %h1= t(:'home.support.title')
+.row
+  :markdown
+    #{t(:'large_texts.home_support')}
+
