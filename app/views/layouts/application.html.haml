@@ -69,7 +69,12 @@
             %ul.unstyled
               %li= link_to t(:'home.about.title'), about_path
               %li= link_to t(:'home.support.title'), support_path
-              %li= link_to "@twietry", "http://twitter.com/twietry"
+              %li
+                twi:
+                = link_to "@twietry", "http://twitter.com/twietry"
+              %li
+                gh:
+                = link_to "at8eqeq3/twietry", "https://github.com/at8eqeq3/twietry"
     :javascript
       var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.dxfoto.ru/" : "http://piwik.dxfoto.ru/");
       document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
