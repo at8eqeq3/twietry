@@ -37,22 +37,24 @@
             %br
             = t(:'lines.new.forbidden2')
         - else
-          .span2
-            %img.identicon{:src => current_user.userpic, :width => 64, :height => 64}
           %form.form-stacked{:method => "post", :action => verse_line_path(@verse)}
             %input{:type => "hidden", :name => "authenticity_token", :value => form_authenticity_token}
-            %fieldset
-              .clearfix
-                .input
-                  .span6
-                    %input.xlarge{:type => "text", :name => "data"}
-                    %span.help-block
-                      = t(:'lines.fields.data_hint')
-                      %br
-                      - if @verse.lines.count == 0
-                        = t(:'lines.fields.data_hint_inspiration')
-                        = raw("&laquo;") + @inspiration.data + raw("&raquo;")
-                  %input.btn.primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
+            .row
+              .span2
+                %img.identicon{:src => current_user.userpic, :width => 64, :height => 64}
+              .span8
+                %fieldset
+                  .clearfix
+                    .input
+                      %input{:type => "text", :name => "data"}
+                      %span.help-block
+                        = t(:'lines.fields.data_hint')
+                        %br
+                        - if @verse.lines.count == 0
+                          = t(:'lines.fields.data_hint_inspiration')
+                          = raw("&laquo;") + @inspiration.data + raw("&raquo;")
+              .span2
+                %input.btn.primary{:type => "submit", :value => t(:"lines.fields.create")}
                   
       - else
         %p.centered
