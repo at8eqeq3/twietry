@@ -14,7 +14,19 @@ class LinesController < ApplicationController
       else
         begin
           verse.lines.create(:data => params[:data], :user => current_user)
-          current_user.verses_count.inc
+          current_user.inc(:lines_count, 1)
+          begin
+            Twitter.configure do |c|
+              c.oauth_token = current_user.token
+              c.oauth_token_secret = current_user.secret
+              c.consumer_key = ENV['TWIETRY_TWITTER_KEY']
+              c.consumer_secret = ENV['TWIETRY_TWITTER_SECRET']
+            end
+            Twitter.update t(:'lines.create.twitter', :line => params[:data], :url => verse_url(verse))
+          rescue Exception => e
+            logger.warn e.message
+            flash[:error] = t(:'verses.create.twitter_failure')
+          end
           #verse.save!
           flash[:success] = t(:'lines.create.success')
         rescue Exception => e

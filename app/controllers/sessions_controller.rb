@@ -3,10 +3,12 @@ class SessionsController < ApplicationController
     begin
       uid = auth_hash['uid']
       name = auth_hash['info']['name']
+      nickname = auth_hash['info']['nickname']
       userpic = auth_hash['info']['image']
       twitter = auth_hash['info']['urls']['Twitter']
       @user = User.find_or_initialize_by(:uid => uid)
       @user.name = name
+      @user.nickname = nickname
       @user.userpic = userpic
       @user.twitter = twitter
       @user.last_login_at = Time.now
