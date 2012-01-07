@@ -35,6 +35,18 @@ class VersesController < ApplicationController
     @verse = Verse.new params[:verse]
     @verse.user = current_user
     if @verse.save
+      begin
+        Twitter.configure do |c|
+          c.oauth_token = ENV['TWIETRY_OWN_TOKEN']
+          c.oauth_token_secret = ENV['TWIETRY_OWN_SECRET']
+          c.consumer_key = ENV['TWIETRY_TWITTER_KEY']
+          c.consumer_secret = ENV['TWIETRY_TWITTER_SECRET']
+        end
+        Twitter.update t(:'verses.create.twitter', :user => @verse.user.nickname, :url => verse_url(@verse))
+      rescue Exception => e
+        logger.warn e.message
+        flash[:error] = t(:'verses.create.twitter_failure')
+      end
       flash[:success] = t(:'verses.create.success')
       redirect_to verse_path(@verse)
     else

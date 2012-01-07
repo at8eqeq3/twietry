@@ -3,6 +3,7 @@ class User
   include Mongo::Voter
   field :uid, :type => String
   field :name, :type => String
+  field :nickname, :type => String
   field :userpic, :type => String
   field :twitter, :type => String
   field :token, :type => String
