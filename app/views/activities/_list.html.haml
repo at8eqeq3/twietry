@@ -1,6 +1,0 @@
-%p
-  = distance_of_time_in_words_to_now(activity.created_at)
-  = t(:'activities.ago')
-  = link_to activity.user.name, activity.user
-  = t(:"activities.actions.#{activity.action}")
-  = link_to activity.trackable.title, activity.trackable

@@ -1,9 +1,15 @@
+.page-header
+  %h1= t(:'home.index.hello_and_welcome')
 .row
-  .span6
-    .page-header
-      %h2= t(:'home.index.about')
-    %p TODO hire a copywriter and add some guides about what to do
-  .span6
-    .page-header
-      %h2= t(:'home.index.activity')
-    = render :partial => "activities/list", :collection => @activities, :as => :activity
+  .span8
+    :markdown
+      #{t(:'large_texts.home_index')}
+  .span4
+    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+    <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div> 
+
+    TODO big nice picture here
+.row
+  .page-header
+    %h2= t(:'home.index.activity')
+  = render :partial => @activities

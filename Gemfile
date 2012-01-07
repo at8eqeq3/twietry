@@ -50,4 +50,5 @@ gem "omniauth",           ">= 0.2.6"
 gem "omniauth-twitter"
 gem "twitter"
 
+gem "bluecloth"
 gem "russian"

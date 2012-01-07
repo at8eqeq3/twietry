@@ -24,10 +24,11 @@ class ApplicationController < ActionController::Base
   #    end
   #  end
 
-  #  def authenticate_user!
-  #    if !current_user
-  #      redirect_to root_url, :alert => 'You need to sign in for access to this page.'
-  #    end
-  #  end
+    def authenticate_user!
+      if !current_user
+        flash[:error] = t(:'auth.need_auth')
+        redirect_to root_url
+      end
+    end
 
 end

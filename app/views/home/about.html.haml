@@ -1,38 +1,6 @@
-%section#about
-  %header
-    %h1.page-header= t(:'home.about.title')
-  .row
-    %article#about-project
-      %header
-        %h2.page-header= t(:'home.about.project.title')
-      %p Everything's cool. We're currently working hard on this project.
-      %p
-        %a.twitter-link{:href => "http://twitter.com/twietry"} Our blog on Twitter
-      %p
-        %a.github-link{:href => "https://github.com/at8eqeq3/twietry"} Our Github repo
-  .row
-    %article#about-team
-      %header
-        %h2.page-header= t(:'home.about.team.title')
-      %p These people are contributed to Twietry:
-      %ul
-        %li
-          %a.twitter-link{:href => "http://twitter.com/at8eqeq3"} at8eqeq3
-        %li
-          %a.twitter-link{:href => "http://twitter.com/wavemeup"} wavemeup
-        %li
-          %a.facebook-link{:href => "https://www.facebook.com/profile.php?id=100001735321775"} Xenia Selkova
-  .row
-    %article#about-resources
-      %header
-        %h2.page-header= t(:'home.about.resources.title')
-      %p We're using this wonderful tools, libraries, resources and other stuff:
-      %p
-        %a.website-link{:href => "http://ruby-lang.org"} Ruby
-        %a.website-link{:href => "http://rubyonrails.org"} Rails
-        %a.website-link{:href => "http://mongodb.org"} MongoDB
-        %a.website-link{:href => "http://mongoid.org"} mongoid
-        %a.website-link{:href => "http://twitter.com"} Twitter
-        %a.website-link{:href => "https://github.com"} Github
-        %a.website-link{:href => "http://paulrobertlloyd.com/2009/06/social_media_icons/"} Paul Robert Lloyd's social media icons
-          
+.page-header
+  %h1= t(:'home.about.title')
+.row
+  :markdown
+    #{t(:'large_texts.home_about')}
+
