@@ -16,7 +16,7 @@
             %a{:href => user_path(line.user)}
               %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
           .text.span8
-            = raw line.data.gsub!(/#\w+/){|ht| raw(link_to ht, hashtag_path(@verse.hashtags.where(:data => ht).first))}
+            = raw line.data.gsub(/#\w+/){|ht| raw(link_to ht, hashtag_path(@verse.hashtags.where(:data => ht).first))}
           .span2
             .rating
               - if current_user
