@@ -5,9 +5,6 @@ class LinesController < ApplicationController
   def create
     verse = Verse.find(params[:verse_id])
     if verse
-      #line = verse.lines.create
-      #line.data = params[:data]
-      #line.user = current_user
       if verse.is_last? current_user
         flash[:error] = t(:'lines.create.not_allowed')
         redirect_to verse_path(verse)
@@ -27,7 +24,6 @@ class LinesController < ApplicationController
             logger.warn e.message
             flash[:error] = t(:'verses.create.twitter_failure')
           end
-          #verse.save!
           flash[:success] = t(:'lines.create.success')
         rescue Exception => e
           logger.warn e.message
