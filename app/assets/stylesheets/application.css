@@ -44,6 +44,7 @@ h1 small {
   height: 80px;
   box-shadow: 0 5px 5px rgba(33,0,11,0.15);
   background: url('/assets/top-bg.png');
+  text-align: center;
 }
 
 body {
@@ -177,4 +178,8 @@ img.identicon {
 }
 .centered {
   text-align: center;
+}
+
+p {
+  font-size: 16px !important;
 }
