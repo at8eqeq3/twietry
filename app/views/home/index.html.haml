@@ -9,6 +9,14 @@
     <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div> 
 
     TODO big nice picture here
+    .alert-message.block-message.info
+      %p
+        %strong= t(:'home.index.stats_header')
+        = t(:'home.index.stats', :users => t(:'users.p', :count => @users_count), :verses => t(:'verses.p', :count => @verses_count), :lines => t(:'lines.p', :count => @lines_count))
+    .alert-message.block-message.success{:style => "text-align: center;"}
+      - @users.each do |user|
+        %a{:href => user_path(user), :title => "#{user.name} (#{user.rating})"}
+          %img{:src => user.userpic, :alt => user.name}
 .row
   .page-header
     %h2= t(:'home.index.activity')
