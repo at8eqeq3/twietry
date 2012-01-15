@@ -10,7 +10,7 @@ class LinesController < ApplicationController
         redirect_to verse_path(verse)
       else
         begin
-          verse.lines.create(:data => params[:data], :user => current_user)
+          verse.lines.create!(:data => params[:data], :user => current_user)
           current_user.inc(:lines_count, 1)
           begin
             Twitter.configure do |c|
