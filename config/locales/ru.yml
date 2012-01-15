@@ -26,6 +26,8 @@ ru:
       activity: Что происходит?
       title: Главная
       hello_and_welcome: Привет и добро пожаловать!
+      stats_header: На текущий момент у нас
+      stats: %{users} создали %{verses} и %{lines}.
     about:
       title: О проекте
     support:
@@ -98,6 +100,11 @@ ru:
     index:
       title: Все действия
   users:
+    p:
+      zero: никого
+      one: один поэт
+      few: %{count} поэта
+      many: %{count} поэтов
     show:
       title: Профиль
       activities:
