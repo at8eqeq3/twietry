@@ -17,9 +17,10 @@
             %li= link_to t(:'home.index.title'), root_path
             %li= link_to t(:'home.about.title'), about_path
             %li= link_to t(:'users.index.title'), users_path
-            %li= link_to t(:'verses.all.title'), verses_path
-            %li= link_to t(:'verses.new.title'), new_verse_path
             %li= link_to t(:'hashtags.index.title'), hashtags_path
+            %li= link_to t(:'verses.all.title'), verses_path
+            - if current_user
+              %li= link_to t(:'verses.new.title'), new_verse_path
           - if current_user
             %ul.nav.secondary-nav
               %li.dropdown
@@ -39,6 +40,11 @@
             .span10.offset3
               %div{:class => "alert-message #{level} top-padded"}
                 %p= message
+      - @motds.each do |motd|
+        .row
+          .span10.offset3
+            %div{:class => "alert-message #{motd.level} block-message top-padded"}
+              %p= motd.data
       .row
         .span12.offset2
           = yield
@@ -75,15 +81,16 @@
               %li
                 gh:
                 = link_to "at8eqeq3/twietry", "https://github.com/at8eqeq3/twietry"
-    :javascript
-      var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.dxfoto.ru/" : "http://piwik.dxfoto.ru/");
-      document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-    :javascript
-      try {
-        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
-        piwikTracker.trackPageView();
-        piwikTracker.enableLinkTracking();
-      } catch( err ) {}
-    %noscript
-      %p
-        %img{:src => "http://piwik.dxfoto.ru/piwik.php?idsite=3", :style => "border: 0;", :alt => ""}
+    - if Rails.env == "production"
+      :javascript
+        var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.dxfoto.ru/" : "http://piwik.dxfoto.ru/");
+        document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+      :javascript
+        try {
+          var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+          piwikTracker.trackPageView();
+          piwikTracker.enableLinkTracking();
+        } catch( err ) {}
+      %noscript
+        %p
+          %img{:src => "http://piwik.dxfoto.ru/piwik.php?idsite=3", :style => "border: 0;", :alt => ""}
