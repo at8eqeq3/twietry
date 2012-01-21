@@ -8,6 +8,9 @@
     = javascript_include_tag "application"
     %script{:src => "http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js", :type => "text/javascript"}
     = csrf_meta_tags
+    - if controller.controller_name == "verses" and controller.action_name == "show"
+      %link{:rel => "alternate", :type => "application/json+oembed", :href => "http://#{request.host}/oembed.json?url=#{request.url.sub('://', '%3A//')}", :title => "twietry verse oembed in json"}
+      %link{:rel => "alternate", :type => "application/xml+oembed", :href => "http://#{request.host}/oembed.xml?url=#{request.url.sub('://', '%3A//')}", :title => "twietry verse oembed in xml"}
   %body
     .topbar{:'data-dropdown' => "dropdown"}
       .topbar-inner
