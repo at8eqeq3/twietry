@@ -4,5 +4,5 @@
     - if params[:user_id]
       %small
         = t(:'activities.attribution')
-        = link_to @activities.first.user.name, @activities.first.user
+        = link_to @user.name, @user
 = render :partial => @activities
