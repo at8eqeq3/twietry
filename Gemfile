@@ -52,3 +52,5 @@ gem "twitter"
 
 gem "bluecloth"
 gem "russian"
+
+gem 'rmagick', :require => 'rvg/rvg'
