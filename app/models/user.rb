@@ -15,4 +15,5 @@ class User
   field :lines_count, :type => Integer, :default => 0
   has_many :verses
   has_many :activities
+  has_and_belongs_to_many :badges
 end
