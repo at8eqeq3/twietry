@@ -1,5 +1,7 @@
 Twietry::Application.routes.draw do
 
+  match '/images/id/:size/:id' => 'identicons#show', :as => 'identicon'
+
   match '/oembed' => 'oembed#endpoint'
 
   resources :hashtags
