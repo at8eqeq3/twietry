@@ -91,7 +91,7 @@ body {
 
 .line {
   height: 70px;
-  border-bottom: 1px dotted #f0f0f0;
+  border-bottom: 1px dotted #e0e0f0;
 }
 .line img {
   /*width: 64px;
@@ -102,9 +102,8 @@ body {
   background-color: #ccc;
 }
 .line .text {
-  /*padding-left: 72px;*/
-  font-size: 24px;
-  padding-top: 20px;
+  font-size: 22px;
+  padding-top: 4px;
 }
 
 .top-padded {
