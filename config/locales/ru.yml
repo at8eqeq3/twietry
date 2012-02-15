@@ -102,7 +102,7 @@ ru:
   users:
     p:
       zero: никого
-      one: один поэт
+      one: %{count} поэт
       few: %{count} поэта
       many: %{count} поэтов
     show:
