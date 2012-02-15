@@ -26,6 +26,7 @@ h1 small {
 }
 
 .topbar-inner {
+  filter: none !important;
   background-color: #110044 !important;
   background-image: none !important;
 }
