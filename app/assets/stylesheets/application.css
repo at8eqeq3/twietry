@@ -6,26 +6,30 @@
  *= require_tree . 
 */
 
-* {
+/** {
   font-family: 'EB Garamond', serif;
 
-}
+}*/
 
 body {
-  font-size: 16px !important;
-  line-height: 24px !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
 }
 
 h1 small {
   line-height: 12px !important;
 }
 
-.topbar {
+.navbar {
   box-shadow: 0 8px 8px rgba(17,0,68,0.3);
   font-size: 19px;
 }
 
-.topbar-inner {
+.navbar .brand {
+  padding: 0 !important;
+}
+
+.navbar-inner {
   filter: none !important;
   background-color: #110044 !important;
   background-image: none !important;
@@ -40,12 +44,8 @@ h1 small {
   background-image: none !important;
 }
 
-.top-branding {
+.container.body {
   padding-top: 40px;
-  height: 80px;
-  box-shadow: 0 5px 5px rgba(33,0,11,0.15);
-  background: url('/assets/top-bg.png');
-  text-align: center;
 }
 
 body {
@@ -181,5 +181,5 @@ img.identicon {
 }
 
 p {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }

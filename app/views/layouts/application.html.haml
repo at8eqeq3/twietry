@@ -4,7 +4,6 @@
     %title Twietry
     = stylesheet_link_tag    "application"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=EB+Garamond&subset=latin,cyrillic"
-    = stylesheet_link_tag "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css"
     = javascript_include_tag "application"
     %script{:src => "http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js", :type => "text/javascript"}
     = csrf_meta_tags
@@ -12,10 +11,11 @@
       %link{:rel => "alternate", :type => "application/json+oembed", :href => "http://#{request.host}/oembed.json?url=#{request.url.sub('://', '%3A//')}", :title => "twietry verse oembed in json"}
       %link{:rel => "alternate", :type => "application/xml+oembed", :href => "http://#{request.host}/oembed.xml?url=#{request.url.sub('://', '%3A//')}", :title => "twietry verse oembed in xml"}
   %body
-    .topbar{:'data-dropdown' => "dropdown"}
-      .topbar-inner
+    .navbar.navbar-fixed-top{:'data-dropdown' => "dropdown"}
+      .navbar-inner
         .container
-          %a.brand{:title => "TWIETRY=TWItter+poETRY"} Twietry
+          %a.brand{:title => "TWIETRY=TWItter+poETRY"}
+            %img{:src => "assets/logo40.png", :alt => "twietry logo"}
           %ul.nav
             %li= link_to t(:'home.index.title'), root_path
             %li= link_to t(:'home.about.title'), about_path
@@ -34,27 +34,25 @@
           - else
             %a.twi.pull-right{:href => "/auth/twitter"}
               %img{:src => "/assets/sign-in-with-twitter-d.png"}
-    .top-branding
-      %img{:src => "/assets/logo80.png"}
     .container.body
       - flash.each do |level, message|
         - if message.is_a? String
           .row
-            .span10.offset3
-              %div{:class => "alert-message #{level} top-padded"}
+            .span10.offset1
+              %div{:class => "alert alert-#{level} top-padded"}
                 %p= message
       - @motds.each do |motd|
         .row
-          .span10.offset3
-            %div{:class => "alert-message #{motd.level} block-message top-padded"}
+          .span10.offset1
+            %div{:class => "alert alert-#{motd.level} alert-block top-padded"}
               %p= motd.data
       .row
-        .span12.offset2
+        .span10
           = yield
     .container
       %footer
         .row
-          .span4.offset1
+          .span4
             %p
               %strong> TWIETRY
               & =
@@ -72,9 +70,9 @@
                 in
                 = Rails.env
                 environment
-          .span2.offset2
+          .span4
             %img{:src => "/assets/logo100.png"}
-          .span4.offset2
+          .span4
             %ul.unstyled
               %li= link_to t(:'home.about.title'), about_path
               %li= link_to t(:'home.support.title'), support_path
