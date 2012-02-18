@@ -1,14 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
-  before_filter :get_motds
   #helper_method :user_signed_in?
   #helper_method :correct_user?
-
-  # finds all active and scheduled MOTDs
-  def get_motds
-    @motds = Motd.where(:is_active => true) # TODO complex query for scheduled items
-  end
 
   private
     def current_user

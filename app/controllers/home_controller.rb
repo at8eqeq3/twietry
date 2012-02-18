@@ -9,6 +9,7 @@ class HomeController < ApplicationController
     Verse.all.each do |verse|
       @lines_count += verse.lines.count
     end
+    @motds = Motd.where(:is_active => true) # TODO complex query for scheduled items
   end
 
   def about

@@ -6,6 +6,9 @@
       :markdown
         #{t(:'large_texts.home_index')}
   .span4
+    - @motds.each do |motd|
+      %div{:class => "alert alert-#{motd.level} alert-block top-padded"}
+        %p= motd.data
     .well
       <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
       <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div> 

@@ -45,11 +45,6 @@
             .span10.offset1
               %div{:class => "alert alert-#{level} top-padded"}
                 %p= message
-      - @motds.each do |motd|
-        .row
-          .span10.offset1
-            %div{:class => "alert alert-#{motd.level} alert-block top-padded"}
-              %p= motd.data
       = yield
     .container
       %footer
