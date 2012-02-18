@@ -1,15 +1,29 @@
-.page-header
-  %h1= t(:'home.index.hello_and_welcome')
 .row
   .span8
-    :markdown
-      #{t(:'large_texts.home_index')}
+    .page-header
+      %h1= t(:'home.index.hello_and_welcome')
+    .text-block
+      :markdown
+        #{t(:'large_texts.home_index')}
   .span4
-    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
-    <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div> 
-
-    TODO big nice picture here
+    .well
+      <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+      <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div> 
+    %ul.thumbnails
+      %li.span4
+        .thumbnail
+          %img{:src => "/assets/eye.png", :alt => "Eye, by Xenia Selkova"}
+          %p
+            Мы следим за тобой, и как бы анонсируем разработку новой фичи:
+            = link_to "https://github.com/at8eqeq3/twietry/issues/9"
+    .well
+      %p
+        %strong= t(:'home.index.stats_header')
+        = t(:'home.index.stats', :users => t(:'users.p', :count => @users_count), :verses => t(:'verses.p', :count => @verses_count), :lines => t(:'lines.p', :count => @lines_count))
+    .well{:style => "text-align: center;"}
+      - @users.each do |user|
+        = link_to image_tag(user.userpic, :alt => user.name), user_path(user), :title => "#{user.name} (#{user.rating})"
 .row
   .page-header
     %h2= t(:'home.index.activity')
-  = render :partial => @activities
+= render :partial => @activities

@@ -1,7 +1,7 @@
 class VersesController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :love, :hate]
   def index
-    @verses = Verse.order_by([[:uid, :desc]]).page(params[:page])
+    @verses = Verse.order_by([[:rating, :desc]]).page(params[:page])
   end
   
   def show

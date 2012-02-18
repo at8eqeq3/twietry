@@ -6,26 +6,31 @@
  *= require_tree . 
 */
 
-* {
+/** {
   font-family: 'EB Garamond', serif;
 
-}
+}*/
 
 body {
-  font-size: 16px !important;
-  line-height: 24px !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
 }
 
 h1 small {
   line-height: 12px !important;
 }
 
-.topbar {
+.navbar {
   box-shadow: 0 8px 8px rgba(17,0,68,0.3);
-  font-size: 19px;
+  font-size: 16px;
 }
 
-.topbar-inner {
+.navbar .brand {
+  padding: 0 !important;
+}
+
+.navbar-inner {
+  filter: none !important;
   background-color: #110044 !important;
   background-image: none !important;
 }
@@ -39,15 +44,9 @@ h1 small {
   background-image: none !important;
 }
 
-.top-branding {
-  padding-top: 40px;
-  height: 80px;
-  box-shadow: 0 5px 5px rgba(33,0,11,0.15);
-  background: url('/assets/top-bg.png');
-}
-
 body {
   background: url('/assets/body-bg.png');
+  background-color: #ccccdd
 }
 
 .rating {
@@ -83,14 +82,14 @@ body {
 	margin-top: 20px;
 	}
 
-/*footer .row {
-  background-color: #f7f0ff;
-  border-top: 1px solid black;
-}*/
+footer .row {
+  margin-top: 16px;;
+  border-top: 1px dotted #e0e0f0;
+}
 
 .line {
   height: 70px;
-  border-bottom: 1px dotted #f0f0f0;
+  border-bottom: 1px dotted #e0e0f0;
 }
 .line img {
   /*width: 64px;
@@ -101,9 +100,8 @@ body {
   background-color: #ccc;
 }
 .line .text {
-  /*padding-left: 72px;*/
-  font-size: 24px;
-  padding-top: 20px;
+  font-size: 22px;
+  padding-top: 4px;
 }
 
 .top-padded {
@@ -149,6 +147,16 @@ img.identicon {
   border: 1px solid #999;
 }
 
+img.img32 {
+  width: 32px;
+  height: 32px;
+}
+
+img.img64 {
+  width: 64px;
+  height: 64px;
+}
+
 .vcard {
   background-color: #1d0d4e;
   padding: 8px;
@@ -165,7 +173,7 @@ img.identicon {
   background: transparent;
 }
 .item:hover {
-  background-color: #f5e9fa;
+  background-color: rgba(205,193,210,0.3);
 }
 
 .hashtag {
@@ -177,4 +185,28 @@ img.identicon {
 }
 .centered {
   text-align: center;
+}
+
+p {
+  font-size: 14px !important;
+}
+
+.text-block {
+  background-color: white;
+  padding: 4px;
+  text-indent: 2em;
+}
+
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+
+.help-block {
+  font-size: 0.9em;
 }

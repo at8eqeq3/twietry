@@ -1,10 +1,15 @@
 .page-header
   .row
-    .span10
+    .span8
       %h1
         = @verse.full_title
         %br
         %small= @verse.idea
+    .span2
+      %ul.thumbnails
+        %li.span2
+          %a.thumbnail
+            %img{:src => "http://placehold.it/120x60"}
     .span2
       = render :partial => "shared/rating", :locals => {:voteable => @verse, :hide_rating => false}
 .row
@@ -12,10 +17,10 @@
     - if @verse.lines.count > 0
       - @verse.lines.each do |line|
         .line.row
-          .span2
+          .span1
             %a{:href => user_path(line.user)}
               %img.identicon{:src => line.user.userpic, :width => 64, :height => 64}
-          .text.span8
+          .text.span9
             = raw line.data.gsub(/#\w+/){|ht| raw(link_to ht, hashtag_path(@verse.hashtags.where(:data => ht).first))}
           .span2
             .rating
@@ -24,42 +29,42 @@
                   - if line.voted_by?(current_user)
                     %span{:class => line.vote_value(current_user)}= t(:"shared.rating.#{line.vote_value(current_user)}")
                   - else
-                    = link_to raw("&uArr;"), love_verse_line_path(@verse, line), :method => :post, :remote => true, :class => "btn success"
-                    = link_to raw("&dArr;"), hate_verse_line_path(@verse, line), :method => :post, :remote => true, :class => "btn danger"
+                    = link_to raw("<i class=\"icon-chevron-up\"></i>"), love_verse_line_path(@verse, line), :method => :post, :remote => true, :class => "btn btn-success"
+                    = link_to raw("<i class=\"icon-chevron-down\"></i>"), hate_verse_line_path(@verse, line), :method => :post, :remote => true, :class => "btn btn-danger"
     - else
-      .line.row
-        .alert-message.block-message.warning= t(:'verses.show.no_lines')
-    .line.row.new-line
-      - if current_user
-        - if @verse.is_last? current_user
-          .alert-message.block-message.error
-            %strong= t(:'lines.new.forbidden')
-            %br
-            = t(:'lines.new.forbidden2')
-        - else
-          %form.form-stacked{:method => "post", :action => verse_line_path(@verse)}
-            %input{:type => "hidden", :name => "authenticity_token", :value => form_authenticity_token}
-            .row
-              .span2
-                %img.identicon{:src => current_user.userpic, :width => 64, :height => 64}
-              .span8
-                %fieldset
-                  .clearfix
-                    .input
-                      %input{:type => "text", :name => "data"}
-                      %span.help-block
-                        = t(:'lines.fields.data_hint')
-                        %br
-                        - if @verse.lines.count == 0
-                          = t(:'lines.fields.data_hint_inspiration')
-                          = raw("&laquo;") + @inspiration.data + raw("&raquo;")
-              .span2
-                %input.btn.primary{:type => "submit", :value => t(:"lines.fields.create")}
-                  
-      - else
-        %p.centered
-          = t(:'auth.unauthorized')
-          %br
-          %a{:href => "/auth/twitter"}
-            %img{:src => "/assets/sign-in-with-twitter-d.png"}
+      .line
+        .alert.alert-block.alert-warning.span10.offset1= t(:'verses.show.no_lines')
+.line.row.new-line
+  - if current_user
+    - if @verse.is_last? current_user
+      .alert.alert-block.alert-error.span10.offset1
+        %strong= t(:'lines.new.forbidden')
+        %br
+        = t(:'lines.new.forbidden2')
+    - else
+      %form.form-horizontal{:method => "post", :action => verse_line_path(@verse)}
+        %input{:type => "hidden", :name => "authenticity_token", :value => form_authenticity_token}
+        .span1
+          %img.identicon{:src => current_user.userpic, :width => 64, :height => 64}
+        .span9
+          %fieldset
+            .clearfix
+              .input
+                %input.span9{:type => "text", :name => "data"}
+                %p.help-block
+                  = t(:'lines.fields.data_hint')
+                  %br
+                  - if @verse.lines.count == 0
+                    = t(:'lines.fields.data_hint_inspiration')
+                    = raw("&laquo;") + @inspiration.data + raw("&raquo;")
+        .span2
+          %input.btn.btn-primary.span2{:type => "submit", :value => t(:"lines.fields.create")}
+              
+  - else
+    .alert.alert-block.alert-error.span10.offset1
+      %p.centered
+        = t(:'auth.unauthorized')
+      %p.centered
+        %a{:href => "/auth/twitter"}
+          %img{:src => "/assets/sign-in-with-twitter-d.png"}
 
