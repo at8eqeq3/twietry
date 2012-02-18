@@ -6,7 +6,7 @@
       :markdown
         #{t(:'large_texts.home_index')}
   .span4
-    .alert.alert-block.alert-warning
+    .well
       <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
       <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div> 
     %ul.thumbnails
@@ -16,11 +16,11 @@
           %p
             Мы следим за тобой, и как бы анонсируем разработку новой фичи:
             = link_to "https://github.com/at8eqeq3/twietry/issues/9"
-    .alert.alert-block.alert-info
+    .well
       %p
         %strong= t(:'home.index.stats_header')
         = t(:'home.index.stats', :users => t(:'users.p', :count => @users_count), :verses => t(:'verses.p', :count => @verses_count), :lines => t(:'lines.p', :count => @lines_count))
-    .alert.alert-block.alert-success{:style => "text-align: center;"}
+    .well{:style => "text-align: center;"}
       - @users.each do |user|
         = link_to image_tag(user.userpic, :alt => user.name), user_path(user), :title => "#{user.name} (#{user.rating})"
 .row

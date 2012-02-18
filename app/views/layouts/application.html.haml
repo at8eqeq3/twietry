@@ -2,6 +2,7 @@
 %html
   %head
     %title Twietry
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     = stylesheet_link_tag    "application"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=EB+Garamond&subset=latin,cyrillic"
     = javascript_include_tag "application"
@@ -11,11 +12,11 @@
       %link{:rel => "alternate", :type => "application/json+oembed", :href => "http://#{request.host}/oembed.json?url=#{request.url.sub('://', '%3A//')}", :title => "twietry verse oembed in json"}
       %link{:rel => "alternate", :type => "application/xml+oembed", :href => "http://#{request.host}/oembed.xml?url=#{request.url.sub('://', '%3A//')}", :title => "twietry verse oembed in xml"}
   %body
-    .navbar.navbar-fixed-top{:'data-dropdown' => "dropdown"}
+    .navbar{:'data-dropdown' => "dropdown"}
       .navbar-inner
         .container
           %a.brand{:title => "TWIETRY=TWItter+poETRY"}
-            %img{:src => "assets/logo40.png", :alt => "twietry logo"}
+            %img{:src => "/assets/logo40.png", :alt => "twietry logo"}
           %ul.nav
             %li= link_to t(:'home.index.title'), root_path
             %li= link_to t(:'home.about.title'), about_path
