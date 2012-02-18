@@ -9,8 +9,13 @@
     .alert.alert-block.alert-warning
       <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
       <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div> 
-    .alert.alert-block.alert-error
-      TODO big nice picture here
+    %ul.thumbnails
+      %li.span4
+        .thumbnail
+          %img{:src => "/assets/eye.png", :alt => "Eye, by Xenia Selkova"}
+          %p
+            Мы следим за тобой, и как бы анонсируем разработку новой фичи:
+            = link_to "https://github.com/at8eqeq3/twietry/issues/9"
     .alert.alert-block.alert-info
       %p
         %strong= t(:'home.index.stats_header')
