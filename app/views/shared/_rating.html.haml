@@ -5,5 +5,5 @@
     - if voteable.voted_by?(current_user)
       %span{:class => voteable.vote_value(current_user)}= t(:"shared.rating.#{voteable.vote_value(current_user)}")
     - else
-      = link_to raw("&uArr;"), {:controller => voteable.collection.name, :action => "love", :id => voteable.id}, :method => :post, :remote => true, :class => "btn success"
-      = link_to raw("&dArr;"), {:controller => voteable.collection.name, :action => "hate", :id => voteable.id}, :method => :post, :remote => true, :class => "btn danger"
+      = link_to raw("<i class=\"icon-chevron-up\"></i>"), {:controller => voteable.collection.name, :action => "love", :id => voteable.id}, :method => :post, :remote => true, :class => "btn btn-success"
+      = link_to raw("<i class=\"icon-chevron-down\"></i>"), {:controller => voteable.collection.name, :action => "hate", :id => voteable.id}, :method => :post, :remote => true, :class => "btn btn-danger"

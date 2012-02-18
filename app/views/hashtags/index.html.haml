@@ -3,5 +3,6 @@
 .row
   - @hashtags.each do |hashtag|
     %span.hashtag{:class => "size-#{(hashtag.verses.count * @coef).to_s}"}
+      %i.icon-tag
       = link_to hashtag.data, hashtag
       = "(#{hashtag.verses.count})"
