@@ -35,8 +35,8 @@
                   %li= link_to t(:'users.show.title'), user_path(current_user)
                   %li= link_to t(:'auth.logout'), auth_logout_path
             - else
-              %li
-                %a.twi.pull-right{:href => "/auth/twitter"}
+              .twi
+                %a{:href => "/auth/twitter"}
                   %img{:src => "/assets/sign-in-with-twitter-d.png"}
     .container.body
       - flash.each do |level, message|
