@@ -7,17 +7,15 @@
       %img{:src => "/assets/signin.png"}
 .row
 - if current_user
-  = form_for @verse do |f|
-    %fieldset
-      .clearfix
-        %label{:for => "verse[title]"}= t(:'verses.fields.title')
-        .input
-          %input.xlarge.span9{:type => "text", :name => "verse[title]"}
-          %span.help-block= t(:'verses.fields.title_hint')
-      .clearfix
-        %label{:for => "verse[idea]"}= t(:'verses.fields.idea')
-        .input
-          %textarea.xlarge.span9{:name => "verse[idea]"}
-          %span.help-block= t(:'verses.fields.idea_hint')
-    .actions
-      %input.btn.primary{:type => "submit", :value => t(:'verses.fields.create')}
+  = form_for @verse, :html => {:class => "form-horizontal"} do |f|
+    .control-group
+      %label.control-label{:for => "verse[title]"}= t(:'verses.fields.title')
+      .controls
+        %input.span9{:type => "text", :name => "verse[title]"}
+        %p.help-block= t(:'verses.fields.title_hint')
+      %label.control-label{:for => "verse[idea]"}= t(:'verses.fields.idea')
+      .controls
+        %textarea.span9{:name => "verse[idea]"}
+        %p.help-block= t(:'verses.fields.idea_hint')
+    .form-actions
+      %input.btn.btn-primary{:type => "submit", :value => t(:'verses.fields.create')}

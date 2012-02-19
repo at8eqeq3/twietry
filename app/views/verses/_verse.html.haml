@@ -1,6 +1,6 @@
 .row.item
   .span2
-    %img.identicon{:src => "http://id.dxfoto.ru/do?s=12&q=5&l=#{verse.id}"}
+    = identicon_tag verse.id, 64
   .span8
     %h2
       %a{:href => verse_path(verse), :title => verse.idea}= verse.full_title

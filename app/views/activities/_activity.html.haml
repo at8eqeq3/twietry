@@ -1,9 +1,9 @@
 .row.item
   .span1
-    %img.identicon{:src => "http://id.dxfoto.ru/do?s=7&q=3&l=#{activity.id}"}
+    = image_tag activity.user.userpic, :class => "identicon img32"
   .span11
     = distance_of_time_in_words_to_now(activity.created_at)
     = t(:'activities.ago')
     = link_to(activity.user.name, activity.user) unless (controller_name == "users" or !params[:user_id].nil?)
     = t(:"activities.actions.#{activity.action}")
-    = link_to activity.trackable.full_title, activity.trackable
+    = raw("&laquo;") + link_to(activity.trackable.full_title, activity.trackable) + raw("&raquo;")
