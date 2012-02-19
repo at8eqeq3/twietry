@@ -2,6 +2,9 @@
   %h1
     = t(:'users.show.title')
 = render :partial => @user
+.badges.row
+  %h2= t(:'users.show.badges.title')
+  = render :partial => @user.badges
 .activities.row
   %h2= t(:'users.show.activities.title')
 = render :partial => @user.activities.limit(14).order_by([[:created_at, :desc]])

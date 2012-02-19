@@ -109,11 +109,16 @@ ru:
       title: Профиль
       activities:
         title: Действия
+      badges:
+        title: Плюшки
     index:
       title: Поэты
   hashtags:
     index:
       title: Тэги
+  badges:
+    index:
+      title: Плюшки
   large_texts:
     home_index:
       "

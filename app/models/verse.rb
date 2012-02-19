@@ -10,6 +10,8 @@ class Verse
   
   after_create :track_creation
   
+  before_save :badge_callbacks
+  
   belongs_to :user
   has_many :activities, :as => :trackable, :dependent => :destroy
   has_and_belongs_to_many :hashtags
@@ -34,6 +36,15 @@ class Verse
   protected
   def track_creation
     self.activities.create(:user => self.user, :action => "create")
+  end
+  
+  def badge_callbacks
+    # IDEA_GENERATOR is for folks who made 20 verses
+    if self.user.verses.count == 19
+      badge = Badge.first(:conditions => {:handle => "idea_generator"})
+      self.user.badges << badge
+      self.user.save
+    end
   end
 
 end
