@@ -1,0 +1,14 @@
+.page-header
+  %h1= t(:'badges.index.title')
+%ul.thumbnails
+  - @badges.each do |badge|
+    %li.span4
+      .thumbnail
+        %h4
+          %i.icon-leaf
+          = badge.name
+        %p= badge.description
+        %p
+          %small
+            Total:
+            = link_to t(:'users.p', :count => badge.users.count), badge_path(badge)

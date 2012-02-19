@@ -1,0 +1,7 @@
+.page-header
+  %h1= @badge.name
+%p= @badge.description
+.page-header
+  %h2= t(:'users.index.title')
+= render :partial => @badge.users.page(params[:page])
+= paginate @badge.users.page(params[:page])

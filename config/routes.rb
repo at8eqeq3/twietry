@@ -1,5 +1,9 @@
 Twietry::Application.routes.draw do
 
+  resources :badges, :only => [:index, :show] do
+    get 'page/:page', :action => :show
+  end
+
   match '/images/id/:size/:id' => 'identicons#show', :as => 'identicon'
 
   match '/oembed' => 'oembed#endpoint'

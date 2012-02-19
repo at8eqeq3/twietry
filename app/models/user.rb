@@ -16,4 +16,19 @@ class User
   has_many :verses
   has_many :activities
   has_and_belongs_to_many :badges
+  
+  before_save :badge_callbacks
+  
+  def badge_callbacks
+    # BETA USER is for users who registered while in beta
+    if ENV['TWIETRY_MODE'] == "beta"
+      badge = Badge.first(:conditions => {:handle => "beta_user"})
+      self.badges << badge
+    end
+    # GRAPHOMANIAC is for those who added 50 lines
+    if self.lines_count == 50
+      badge = Badge.first(:conditions => {:handle => "graphomaniac"})
+      self.badges << badge
+    end
+  end
 end

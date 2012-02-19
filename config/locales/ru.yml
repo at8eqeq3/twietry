@@ -116,6 +116,9 @@ ru:
   hashtags:
     index:
       title: Тэги
+  badges:
+    index:
+      title: Плюшки
   large_texts:
     home_index:
       "

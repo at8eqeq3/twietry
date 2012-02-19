@@ -8,7 +8,7 @@ class Line
   field :data, :type => String
   
   before_create :post_to_twitter
-  before_save :find_hashtags
+  before_save :find_hashtags, :badge_callbacks
   
   after_create :track_creation
   
@@ -31,6 +31,10 @@ class Line
   
   def track_creation
     self.verse.activities.create(:user => self.user, :action => "add_line")
+  end
+  
+  def badge_callbacks
+    
   end
   
 end
