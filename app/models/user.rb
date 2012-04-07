@@ -19,6 +19,12 @@ class User
   
   before_save :badge_callbacks
   
+  alias :old_name :name
+  
+  def name
+    old_name.strip.length <= 3 ? "#{old_name} (#{nickname})" : old_name
+  end
+  
   def badge_callbacks
     # BETA USER is for users who registered while in beta
     if ENV['TWIETRY_MODE'] == "beta"
