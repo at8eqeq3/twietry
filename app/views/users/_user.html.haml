@@ -1,6 +1,6 @@
 .row.item
   .span2
-    %img.identicon{:src => user.userpic}
+    %img.identicon{:src => user.userpic, :width => 48, :height => 48}
   .span9
     %h2= link_to_unless_current user.name, user
     %p 
