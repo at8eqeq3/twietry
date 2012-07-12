@@ -12,6 +12,14 @@
     .well
       <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
       <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div> 
+    .well
+      = t(:'home.index.languages')
+      %br/
+      %a{:href => "/ru"}
+        %img{:src => "/assets/ru.png", :alt => "ru flag"}Русском
+      %br/
+      %a{:href => "/en"}
+        %img{:src => "/assets/gb.png", :alt => "en flag"}English
     %ul.thumbnails
       %li.span4
         .thumbnail
