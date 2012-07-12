@@ -1,5 +1,132 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  views:
+    pagination:
+      first: "&lArr;"
+      last: "&rArr;"
+      previous: "&larr;"
+      next: "&rarr;"
+      truncate: "..."
+  layout:
+    whatis: Here you can create verses
+  auth:
+    success: "Welcome, %{name}"
+    failure: "Authorization error. Twitter said: %{message}"
+    logout: Exit
+    logged_out: Bye-bye! See you later!
+    unauthorized: To add line, you have to login. Use Twitter to do this.
+    need_auth: It is necessary to authorize. Click on button above.
+  shared:
+    page: page
+    rating:
+      up: i like it
+      down: i don't like it
+  home:
+    index:
+      about: Where i am?
+      activity: What's going on?
+      title: Main
+      hello_and_welcome: Hello and welcome!
+      stats_header: At this moment
+      stats: %{users} created %{verses} and %{lines}.
+      languages: "You can use Twietry on: "
+    about:
+      title: About
+    support:
+      title: Help
+  verses:
+    p:
+      zero: %{count} verses
+      one: %{count} verse
+      other: %{count} verses
+    author: Author
+    last_user: Last user
+    status:
+      title: Status
+      finished: Finished
+      not_finished: Not finished
+    fields:
+      title: Title
+      title_hint: If you don't title, write ***
+      idea: Idea
+      idea_hint: Write the main idea of the verse (don't write here first line!)
+      create: Create
+    started: created - 
+    index:
+      title: Verses
+    show:
+      no_lines: There aren't lines in this verse. You can be first!
+      notfound: We didn't find it. WTF?
+      created_by: Created by
+      last_line_by: last line was by
+    simple:
+      created_with: This verse created with
+      created_by: These users were creating this verse
+      joiner: and
+    new:
+      title: Create verse
+    all:
+       title: All verses
+    create:
+      failure: Please, fill all fields
+      success: The verse has been successfully created
+      twitter: @%{user} began new verse -- %{url}
+      twitter_failure: We can't send message to the Twitter. Shit.
+  lines:
+    p:
+      zero: %{count} lines
+      one: %{count} line
+      other: %{count} lines
+    fields:
+      data_hint: "From 10 to 100 symbols. You can use #tags"
+      data_hint_inspiration: For example,
+      create: Add
+    title: Lines
+    create:
+      failure: We can't add a line. What a pity.
+      success: Line has been added successfully (and we sent it to your twitter)
+      not_allowed: You can't add line now. 
+      twitter: "%{line} %{url} #twietry"
+      twitter_failure: We can't send message to the Twitter. Shit.
+    new:
+      forbidden: You can't add 2 lines in succession
+      forbidden2: Wait until somebody will write new line, or choose another verse
+  activities:
+    ago: ago
+    actions:
+      create: created verse
+      add_line: add line to a verse
+    attribution: user
+    index:
+      title: All activities
+  users:
+    p:
+      zero: %{count} poets
+      one: %{count} poet
+      other: %{count} poets
+    show:
+      title: Profile
+      activities:
+        title: Activities
+      badges:
+        title: Badges
+    index:
+      title: Poets
+  hashtags:
+    index:
+      title: Tags
+  badges:
+    index:
+      title: Badges
+  large_texts:
+    home_index:
+      "
+      Coming Soon.
+      "
+    home_about:
+      "
+      Coming Soon.
+    "
+    home_support:
+      "
+      Coming Soon.
+      "
