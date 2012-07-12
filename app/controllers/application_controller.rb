@@ -3,7 +3,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   #helper_method :user_signed_in?
   #helper_method :correct_user?
-
+  def default_url_options(options={})
+  logger.debug "default_url_options is passed options: #{options.inspect}\n"
+  { :locale => I18n.locale }
+  end
+  before_filter :set_locale
+  def set_locale
+  I18n.locale = params[:locale] || I18n.default_locale
+  end
   private
     def current_user
       begin
@@ -12,7 +19,7 @@ class ApplicationController < ActionController::Base
         nil
       end
     end
-
+  
   #  def user_signed_in?
   #    return true if current_user
   #  end
