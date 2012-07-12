@@ -27,14 +27,15 @@ ru:
       title: Главная
       hello_and_welcome: Привет и добро пожаловать!
       stats_header: На текущий момент у нас
-      stats: %{users} создали %{verses} и %{lines}.
+      stats: %{users} сочинили %{verses} и %{lines}.
+      languages: "Ты можешь использовать Twietry на: "
     about:
       title: О проекте
     support:
       title: Помогающая помощь
   verses:
     p:
-      zero: стихов нет
+      zero: %{count} стихов
       one: %{count} стих
       few: %{count} стиха
       many: %{count} стихов
@@ -73,7 +74,7 @@ ru:
       twitter_failure: Случилась ошибка при отправке сообщения в твиттер. Ну и ладно.
   lines:
     p:
-      zero: строчек нет
+      zero: %{count} строчек
       one: %{count} строчка
       few: %{count} строчки
       many: %{count} строчек
@@ -101,7 +102,7 @@ ru:
       title: Все действия
   users:
     p:
-      zero: никого
+      zero: %{count} поэтов
       one: %{count} поэт
       few: %{count} поэта
       many: %{count} поэтов
