@@ -1,3 +1,5 @@
-Twietry - это сайт, где можно сочинять стихи коллективно по одной строчке за раз, активно использующий для своей жизнедеятельности Twitter. Мы не против, если вы запустите свой экземпляр чего-то подобного на основе нашего кода (только название и картинки поменяйте, что ли). За патчики будем благодарны.
+Twietry (like Twitter and Poetry) was a small project of implementing a bouts-rimés game with a web-interface and Twitter integration.
 
-Лицензия на код - CC-BY-SA, на графику - CC-BY.
+Now, there's nobody to work on this, so the website is closed. But anyone can use our codebase for free (or, coffee-ware) to improve it and set up their own website. Please, remember that 3 of images used on original website (app/assets/images/eye.png, app/assets/images/logo100.png, and app/assets/images/logo40.png) are CC-BY Xenia Selkova.
+
+Please, let us know if you will use our code. Thanks.
